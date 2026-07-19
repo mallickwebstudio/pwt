@@ -45,10 +45,10 @@ export default function Footer() {
         <div className="grid gap-8 md:gap-16 md:grid-cols-[0.75fr_1fr]">
           {/* Newsletter section */}
           <section aria-labelledby="newsletter-heading">
-            <Link className="block h-8 w-fit" href="#" aria-label="Homepage">
+            <Link className="block h-12 w-fit" href="/" aria-label="Homepage">
               <Image
                 className="h-full w-fit select-none pointer-events-none"
-                src="/logo.svg"
+                src="/images/logo/logo-title.png"
                 width={32}
                 height={32}
                 alt="Your Company Logo"

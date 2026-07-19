@@ -52,16 +52,16 @@ export default function BookingSteps() {
     >
       <ul className="relative mt-10 grid gap-6 md:mt-12 lg:grid-cols-3">
         <Image
-          className='absolute bottom-0 left-40 w-60 object-contain select-none pointer-events-none'
-          src='/images/decor/ad-one.svg'
+          className='hidden lg:block absolute bottom-0 left-40 w-60 object-contain select-none pointer-events-none'
+          src='/images/decor/arrow-plane.svg'
           width={200}
           height={200}
           alt='Steps Path Decoration'
           unoptimized
         />
         <Image
-          className='absolute top-0 right-40 w-60 rotate-x-180 rotate-45 object-contain select-none pointer-events-none'
-          src='/images/decor/ad-one.svg'
+          className='hidden lg:block absolute top-0 right-40 w-60 rotate-x-180 rotate-45 object-contain select-none pointer-events-none'
+          src='/images/decor/arrow-plane.svg'
           width={200}
           height={200}
           alt='Steps Path Decoration'

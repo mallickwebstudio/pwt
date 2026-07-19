@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function CategoryCard({ data }: { data: PackageCategory }) {
     return (
         <Link
-            className="relative overflow-hidden w-full flex flex-col items-center justify-center text-center rounded-2xl group"
+            className="relative p-2 overflow-hidden flex flex-col items-center justify-center text-center rounded-2xl group"
             href={`/packages?category=${encodeURIComponent(data.name)}`}
         >
             <div className="aspect-square w-40 rounded-full overflow-hidden">

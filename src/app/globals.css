@@ -10,7 +10,10 @@
   --color-tone-yellow: var(--color-yellow-600);
   --color-tone-yellow-foreground: var(--color-neutral-50);
   --font-sans: var(--font-poppins);
+  --font-mono: var(--font-geist-mono);
+  --font-script: var(--font-tangerine);
   --font-lemon: var(--font-lemon);
+  --font-tangerine: var(--font-tangerine);
   --font-heading: var(--font-lemon);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -174,6 +177,10 @@
 @layer utilities {
   .var-phone {
     @apply bg-blue-700 text-neutral-50 hover:bg-blue-950/70;
+  }
+
+  .var-phone-secondary {
+    @apply bg-cyan-700 text-neutral-50 hover:bg-cyan-950/70;
   }
 
   .var-whatsapp {

@@ -31,7 +31,7 @@ export default function Section({
     const showCta = !!(ctaHref && ctaLabel);
 
     return (
-        <section className={cn("relative bg-background", className)}>
+        <section className={cn("relative bg-background overflow-hidden", className)}>
             <div className={cn("container mx-auto px-6 py-12 md:px-16", wrapperClassName)}>
 
                 {showHeader && (

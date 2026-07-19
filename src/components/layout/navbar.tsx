@@ -127,7 +127,7 @@ function NavbarNavigationLinks({ className }: { className?: string }) {
                         </NavigationMenuItem>
                     ) : (
                         <NavigationMenuItem key={item.label + "NavbarOne"}>
-                            <NavigationMenuLink className={cn(buttonVariants({ variant: "secondary" }))} href={item.href}>
+                            <NavigationMenuLink className={cn(buttonVariants({ variant: "outline" }))} href={item.href}>
                                 {item.label}
                             </NavigationMenuLink>
                         </NavigationMenuItem>
