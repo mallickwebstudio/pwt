@@ -2,6 +2,7 @@ import { packagesData } from "@/lib/db/packages";
 import Section from "@/components/section/section";
 import DestinationCard from "@/components/card/destination-card";
 import { Destination as TypeDestination } from "@/types";
+import { pricingData } from "@/lib/db/pricing";
 
 const destinations = Object.values(
   packagesData.reduce<Record<string, TypeDestination>>((acc, pkg) => {
@@ -15,14 +16,14 @@ const destinations = Object.values(
           image: heroImage,
           href: `/packages?destination=${encodeURIComponent(destination)}`,
           packageCount: 0,
-          startingPrice: pkg.pricing.startingPrice,
+          startingPrice: pricingData[pkg.slug].startingPrice,
         };
       }
 
       acc[destination].packageCount += 1;
       acc[destination].startingPrice = Math.min(
         acc[destination].startingPrice,
-        pkg.pricing.startingPrice
+        pricingData[pkg.slug].startingPrice
       );
     });
 
@@ -30,7 +31,7 @@ const destinations = Object.values(
   }, {})
 )
   .sort((a, b) => b.packageCount - a.packageCount)
-  .slice(0, 3);
+  .slice(0, 8);
 
 export default function Destination() {
   return (
@@ -41,7 +42,7 @@ export default function Destination() {
       ctaLabel="View All Destinations"
     >
       {/* Service Cards */}
-      <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 list-none">
+      <ul className="mt-10 grid gap-2 md:gap-6 grid-cols-2 md:grid-cols-4 list-none">
         {destinations.map((data) => (
           <li key={data.name + "HomeDestination"}>
             <DestinationCard data={data} />

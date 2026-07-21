@@ -1,21 +1,22 @@
-import { TourPackage } from "@/types/packages";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
 import { buttonVariants } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { BasePackage } from "@/types";
+import { pricingData } from "@/lib/db/pricing";
 
-export default function PackageCard({ data }: { data: TourPackage }) {
+export default function PackageCard({ data }: { data: BasePackage }) {
     // const heroImage = pkg.media.find((img) => img.isHero)?.url ?? pkg.media[0]?.url;
     const heroImage = "/images/bg/02.jpeg";
 
     return (
         <Link
-            className="relative block rounded-4xl border bg-card group overflow-hidden"
+            className="relative block"
             href={`/packages/${data.slug}`}
         >
-            <article>
+            <article className="relative block rounded-4xl border bg-card group overflow-hidden">
                 <div className="relative aspect-4/3 overflow-hidden">
                     <Image
                         className="w-full object-cover transition duration-500 group-hover:scale-105 select-none pointer-events-none"
@@ -50,8 +51,8 @@ export default function PackageCard({ data }: { data: TourPackage }) {
                             <p className="text-xs text-muted-foreground italic">
                                 Starting From
                             </p>
-                            <p className="text-xl font-bold text-tone-yellow">
-                                ₹{data.pricing.startingPrice.toLocaleString("en-IN")}
+                            <p className="text-lg font-bold text-tone-yellow font-heading">
+                                ₹{pricingData[data.slug].startingPrice.toLocaleString("en-IN")}
                             </p>
                         </div>
 
@@ -62,6 +63,15 @@ export default function PackageCard({ data }: { data: TourPackage }) {
                     </div>
                 </header>
             </article>
+            {data.isFeatured && (
+                <div className="absolute -left-6 top-2 -rotate-45">
+                    <Badge className="bg-primary text-secondary px-4 py-2 rounded-none border border-secondary">
+                        <div className="absolute -right-2 size-3.5 bg-background rotate-45 border-l border-b border-secondary" />
+                        <div className="absolute -left-2 size-3.5 bg-background rotate-45 border-r border-t border-secondary" />
+                        Featured
+                    </Badge>
+                </div>
+            )}
         </Link>
     )
 }

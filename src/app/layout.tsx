@@ -6,7 +6,7 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import { siteConfig } from "@/lib/metadata";
 import Contact from "@/components/section/contact";
-
+import { NuqsAdapter } from 'nuqs/adapters/next/app'
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -55,9 +55,11 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Navbar />
-        <main className="flex-1">
-          {children}
-        </main>
+        <NuqsAdapter>
+          <main className="flex-1">
+            {children}
+          </main>
+        </NuqsAdapter>
         <Contact />
         <Footer />
       </body>

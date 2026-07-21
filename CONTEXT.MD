@@ -168,6 +168,27 @@ Contact (2-column)
 Footer
 
 
+## Packages Page 
+Hero
+
+Filter Bar (sticky)
+
+Featured Packages
+
+All Packages Grid
+
+Categories
+
+Why Choose Us
+
+Booking Process
+
+Testimonials
+
+FAQ
+
+CTA Banner
+
 
 #
 

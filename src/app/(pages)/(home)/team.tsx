@@ -69,6 +69,7 @@ export const teamData = [
 export default function Team() {
   return (
     <Section
+      className='bg-foreground text-background'
       h2="The Team Behind Your Journey"
       p="From trip planning to your safe return, our passionate travel professionals are here to make every step of your vacation effortless and enjoyable."
     >
@@ -80,13 +81,11 @@ export default function Team() {
 
               <div
                 // className="absolute inset-0 top-1/2 bottom-1/2 -translate-y-1/2 left-1/2 right-1/2 -translate-x-1/2 size-30  blur-[500px] bg-primary"
-                className="absolute inset-0 bg-linear-to-t from-primary via-primary/50 to-secondary/50"
+                className="absolute inset-0 bg-linear-to-t from-primary to-primary/10"
                 aria-hidden
               />
 
-              <div
-                className="absolute inset-0 top-1/2 bottom-1/2 -translate-y-1/2 left-[55%] right-1/2 -translate-x-1/2 size-full"
-              >
+              <div className="absolute inset-0 top-1/2 bottom-1/2 -translate-y-1/2 left-[55%] right-1/2 -translate-x-1/2 size-full">
                 <Image
                   className="size-full object-contain select-none pointer-events-none group-hover:scale-75 transition-all duration-300"
                   width={32}

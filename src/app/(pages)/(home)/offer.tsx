@@ -4,11 +4,13 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { offersData } from "@/lib/db/offers";
-import { ArrowRight, CheckCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { mediaData } from "@/lib/db/media";
+import { pricingData } from "@/lib/db/pricing";
 
 export default function Offer() {
   const offer = offersData[0]
-  const heroImages = offer.media.slice(0, 3);
+  const heroImages = mediaData[offer.slug].slice(0, 3);
 
   return (
     <Section wrapperClassName="px-2 sm:px-6 py-2 md:py-6">
@@ -66,8 +68,8 @@ export default function Offer() {
                 Starting From
               </p>
 
-              <h3 className="mt-1 text-2xl font-bold text-primary-foreground">
-                ₹{offer.pricing.startingPrice.toLocaleString("en-IN")}
+              <h3 className="mt-1 text-2xl font-bold text-secondary font-heading">
+                ₹{pricingData[offer.slug].startingPrice.toLocaleString("en-IN")}
               </h3>
             </div>
 
@@ -99,7 +101,7 @@ export default function Offer() {
 
           {/* Highlights */}
           <div className="grid sm:grid-cols-2 gap-3 mt-8">
-            {offer.highlights && offer.highlights.slice(0, 4).map((highlight) => (
+            {/* {offer.highlights && offer.highlights.slice(0, 4).map((highlight) => (
               <div
                 className="flex items-start gap-2 rounded-xl bg-white/5 p-3"
                 key={highlight}
@@ -110,7 +112,7 @@ export default function Offer() {
                   {highlight}
                 </p>
               </div>
-            ))}
+            ))} */}
           </div>
 
           {/* CTA */}

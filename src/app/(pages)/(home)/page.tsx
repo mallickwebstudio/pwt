@@ -23,8 +23,10 @@ export default function page() {
         <>
             <Hero />
             {/* <TrustBanner /> */}
+            {/* <Partntrs /> */}
             <Destination />
             <Package />
+            {/* <Upcoming /> */}
             <WhyUs />
             <Category />
             <Offer />
@@ -33,7 +35,6 @@ export default function page() {
             {/* <Gallery /> */}
             <Activities />
             {/* <DestinationListMap /> */}
-            {/* <Upcoming /> */}
             {/* Popular pages specific package banner in a carousel wrapped in a border-section left side vertical card style image-3 right side details, description, view more */}
             <Team />
             <Faq />

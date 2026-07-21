@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, Plane, X } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -73,7 +73,9 @@ export default function Navbar() {
                 <NavbarCtaAction className="hidden lg:flex items-center gap-2 justify-self-end" />
 
                 {/* Mobile Menu Toggle */}
-                <button
+                <Button
+                    variant="outline"
+                    size="icon"
                     onClick={toggleMobileMenu}
                     className="lg:hidden cursor-pointer justify-self-end"
                     aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -81,7 +83,7 @@ export default function Navbar() {
                 >
                     {isMobileMenuOpen ? <X /> : <Menu />}
                     <span className="sr-only">Toggle Menu</span>
-                </button>
+                </Button>
             </div>
 
             {/* Mobile Menu */}

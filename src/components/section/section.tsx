@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 interface CarouselSectionProps {
     h2?: string;
     p?: string;
+    headerCenter?: string;
     ctaHref?: string;
     ctaLabel?: string;
     className?: string;
@@ -19,6 +20,7 @@ interface CarouselSectionProps {
 export default function Section({
     h2,
     p,
+    headerCenter,
     ctaHref,
     ctaLabel,
     className,
@@ -35,8 +37,8 @@ export default function Section({
             <div className={cn("container mx-auto px-6 py-12 md:px-16", wrapperClassName)}>
 
                 {showHeader && (
-                    <header className={cn("flex items-end justify-between gap-6", headerClassName )}>
-                        <div className={cn("max-w-2xl", headingWrapperClassName)}>
+                    <header className={cn("flex items-end justify-between gap-6", headerClassName)}>
+                        <div className={cn("max-w-2xl", headerCenter && "mx-auto text-center", headingWrapperClassName)}>
                             <h2 className="h2">{h2}</h2>
                             {p && (
                                 <p className="mt-3 md:mt-4 md:text-lg text-muted-foreground">{p}</p>

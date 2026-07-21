@@ -77,7 +77,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: var(--color-red-200);
   /* --input: oklch(0.922 0 0); */
-  --input: var(--color-amber-400);
+  --input: var(--color-neutral-200);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);

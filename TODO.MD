@@ -5,13 +5,39 @@
     -> Offer Section
     -> Team Section
     -> Contact Section
-
-# TODO TODAY
     -> Packages Page (with filtering)
     -> Fix destinitions
+
+# TODO TODAY
     -> Upcoming Packages
     -> Partner/Authority section
     -> Ig Section
 
-<!-- 17-7-24 -->
-    -> Implement functionalities
+Packages Details page
+Hero
+↓
+Quick Facts
+↓
+Highlights
+↓
+Gallery
+↓
+Itinerary
+↓
+Hotels
+↓
+Pricing
+↓
+Inclusions & Exclusions
+↓
+Why Book With Us
+↓
+Reviews / Testimonials
+↓
+Important Notes
+↓
+FAQs
+↓
+Related Packages
+↓
+Sticky Enquiry CTA
