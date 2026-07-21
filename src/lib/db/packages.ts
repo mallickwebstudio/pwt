@@ -2,7 +2,6 @@ import { BasePackage } from "@/types";
 
 export const packagesData: BasePackage[] = [
   {
-    id: "pkg-dubai-premium",
     slug: "dubai-abu-dhabi-yas-island",
     title: "Dubai & Abu Dhabi Yas Island Experience",
     description: "Experience the luxury of Dubai and Abu Dhabi featuring 124th-floor Burj Khalifa access, a private yacht dinner, VIP desert safari, and Theme Park adventures at Yas Island.",
@@ -14,7 +13,6 @@ export const packagesData: BasePackage[] = [
     destinations: ["Dubai", "Abu Dhabi", "Yas Island"]
   },
   {
-    id: "pkg-singapore-malaysia",
     slug: "singapore-malaysia-7d",
     title: "Singapore & Malaysia Highlights",
     description: "Explore the best of Singapore and Malaysia with visits to Universal Studios, Gardens by the Bay, Sentosa Island, Genting Highlands, and Kuala Lumpur city attractions.",
@@ -26,7 +24,6 @@ export const packagesData: BasePackage[] = [
     destinations: ["Singapore", "Kuala Lumpur", "Genting Highlands"]
   },
   {
-    id: "pkg-singapore-malaysia-thailand",
     slug: "singapore-malaysia-thailand-11d",
     title: "Singapore, Malaysia & Thailand Trio",
     description: "An extensive 11-day multi-country tour covering Singapore, Malaysia, Bangkok, and Pattaya with theme parks, island tours, and cultural highlights.",
@@ -38,7 +35,6 @@ export const packagesData: BasePackage[] = [
     destinations: ["Singapore", "Kuala Lumpur", "Genting Highlands", "Bangkok", "Pattaya"]
   },
   {
-    id: "pkg-singapore-malaysia-cruise",
     slug: "singapore-malaysia-cruise-9d",
     title: "Singapore & Malaysia with Resort World Cruise",
     description: "Enjoy a 9-day luxury vacation incorporating 2 nights on the Resort World Cruise alongside stays in Singapore and Kuala Lumpur.",
@@ -50,7 +46,6 @@ export const packagesData: BasePackage[] = [
     destinations: ["Singapore", "Resort World Cruise", "Kuala Lumpur", "Genting Highlands"]
   },
   {
-    id: "pkg-singapore-malaysia-thailand-cruise",
     slug: "singapore-malaysia-thailand-cruise-13d",
     title: "Ultimate Southeast Asia: Singapore, Malaysia, Thailand & Cruise",
     description: "The complete 13-day Southeast Asian trip featuring Singapore, a 2-night cruise, Kuala Lumpur, Pattaya, and Bangkok.",
@@ -62,7 +57,6 @@ export const packagesData: BasePackage[] = [
     destinations: ["Singapore", "Resort World Cruise", "Kuala Lumpur", "Bangkok", "Pattaya"]
   },
   {
-    id: "pkg-vietnam-signature",
     slug: "vietnam-signature-9d",
     title: "Signature Vietnam: Hanoi, Halong Bay, Da Nang & Phu Quoc",
     description: "An incredible 9-day journey across Vietnam featuring an overnight Halong Bay luxury cruise, Ba Na Hills Golden Bridge, and Phu Quoc Island.",
@@ -73,19 +67,17 @@ export const packagesData: BasePackage[] = [
     duration: { nights: 8, days: 9 },
     destinations: ["Hanoi", "Halong Bay", "Da Nang", "Phu Quoc Island"]
   },
+  // {
+  //   slug: "bali-exotic-escape",
+  //   title: "Exotic Bali Honeymoon & Beach Getaway",
+  //   description: "Discover paradise in Bali with private pool villa stays, Nusa Penida island speedboat tours, and cultural Ubud swings.",
+  //   status: "PUBLISHED",
+  //   category: "International",
+  //   isFeatured: true,
+  //   duration: { nights: 5, days: 6 },
+  //   destinations: ["Ubud", "Kuta", "Nusa Penida"]
+  // },
   {
-    id: "pkg-bali-custom",
-    slug: "bali-exotic-escape",
-    title: "Exotic Bali Honeymoon & Beach Getaway",
-    description: "Discover paradise in Bali with private pool villa stays, Nusa Penida island speedboat tours, and cultural Ubud swings.",
-    status: "PUBLISHED",
-    category: "International",
-    isFeatured: true,
-    duration: { nights: 5, days: 6 },
-    destinations: ["Ubud", "Kuta", "Nusa Penida"]
-  },
-  {
-    id: "pkg-phuket-custom",
     slug: "phuket-krabi-escape",
     title: "Phuket & Krabi Island Hopping",
     description: "Relax on pristine Thai beaches with speedboat tours to Phi Phi Islands and James Bond Island.",
@@ -96,7 +88,6 @@ export const packagesData: BasePackage[] = [
     destinations: ["Phuket", "Krabi", "Phi Phi Islands"]
   },
   {
-    id: "pkg-goa-beach",
     slug: "goa-beach-bliss",
     title: "Vibrant Goa Beach & Nightlife Tour",
     description: "Unwind on the sandy shores of Goa with river cruises, water sports, and heritage church visits.",
@@ -107,7 +98,6 @@ export const packagesData: BasePackage[] = [
     destinations: ["North Goa", "South Goa"]
   },
   {
-    id: "pkg-kerala-backwaters",
     slug: "kerala-backwaters-munnar",
     title: "Enchanting Kerala Houseboat & Hill Station",
     description: "Immerse yourself in God's Own Country with tea gardens in Munnar and an overnight backwater houseboat cruise in Alleppey.",
@@ -118,7 +108,6 @@ export const packagesData: BasePackage[] = [
     destinations: ["Munnar", "Thekkady", "Alleppey Houseboat", "Kochi"]
   },
   {
-    id: "pkg-shimla-mandi",
     slug: "shimla-mandi-manali",
     title: "Scenic Himachal: Shimla, Mandi & Manali",
     description: "Travel through snow-capped mountains, Solang Valley adventure parks, and pine valleys in Himachal Pradesh.",
@@ -129,7 +118,6 @@ export const packagesData: BasePackage[] = [
     destinations: ["Shimla", "Mandi", "Manali", "Kullu"]
   },
   {
-    id: "pkg-udaipur-custom",
     slug: "royal-udaipur-customize",
     title: "Royal Udaipur & Mount Abu Custom Tour",
     description: "Experience royal Rajasthani heritage with Lake Pichola boat rides, majestic palaces, and hill station scenery in Mount Abu.",
@@ -139,19 +127,17 @@ export const packagesData: BasePackage[] = [
     duration: { nights: 3, days: 4 },
     destinations: ["Udaipur", "Mount Abu"]
   },
+  // {
+  //   slug: "kashmir-paradise-on-earth",
+  //   title: "Kashmir Paradise: Srinagar, Gulmarg & Pahalgam",
+  //   description: "Discover the breathtaking beauty of Kashmir with Shikara rides on Dal Lake, Gulmarg Gondola rides, and Pahalgam valley tours.",
+  //   status: "PUBLISHED",
+  //   category: "Domestic",
+  //   isFeatured: true,
+  //   duration: { nights: 5, days: 6 },
+  //   destinations: ["Srinagar", "Gulmarg", "Pahalgam", "Sonmarg"]
+  // },
   {
-    id: "pkg-kashmir-paradise",
-    slug: "kashmir-paradise-on-earth",
-    title: "Kashmir Paradise: Srinagar, Gulmarg & Pahalgam",
-    description: "Discover the breathtaking beauty of Kashmir with Shikara rides on Dal Lake, Gulmarg Gondola rides, and Pahalgam valley tours.",
-    status: "PUBLISHED",
-    category: "Domestic",
-    isFeatured: true,
-    duration: { nights: 5, days: 6 },
-    destinations: ["Srinagar", "Gulmarg", "Pahalgam", "Sonmarg"]
-  },
-  {
-    id: "pkg-sikkim-gangtok",
     slug: "sikkim-gangtok-darjeeling",
     title: "Sikkim & Darjeeling Himalayan Magic",
     description: "Journey through the Eastern Himalayas visiting Gangtok monasteries, Tsomgo Lake, and Tiger Hill sunrise point in Darjeeling.",

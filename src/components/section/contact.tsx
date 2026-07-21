@@ -22,27 +22,15 @@ export default function Contact() {
                         <h3 className="h4">Contact Form</h3>
                         <EnquiryForm className="mt-2" />
                     </div>
-
-                    <div className="mt-6 p-4 bg-card rounded-4xl border">
-                        <h3 className="h4 font-bold text-foreground">
-                            Office Hours
-                        </h3>
-                        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                            We are available to assist you during our working hours,{" "}
-                            <strong className="font-semibold text-foreground">Monday to Saturday</strong>,{" "}
-                            from <strong className="font-semibold text-foreground">10:00 AM to 8:00 PM</strong>.
-                            Feel free to contact or visit us during this time, and we&quot;ll be happy to help.
-                        </p>
-                    </div>
                 </div>
 
                 {/* Right Column: Visual Map Context */}
                 <div className="relative overflow-hidden lg:col-span-2">
                     <CompanyDetails />
-                    <div className="mt-6 relative h-60 lg:h-100 grid grid-cols-1 rounded-4xl overflow-hidden">
+                    <div className="mt-6 relative h-60 lg:h-80 grid grid-cols-1 rounded-4xl overflow-hidden">
                         <iframe
                             className="block size-full"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d767.5641538581808!2d73.40823531268963!3d22.131408499185977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fe16e2493c559%3A0x6a0e73a596b8dd69!2sVadodara%20Jilla%20Kelavani%20Mandal!5e1!3m2!1sen!2sin!4v1782736929353!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d923.0468000607393!2d73.19430922108856!3d22.27089754250123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc5661d753df5%3A0x2e494018282c65b9!2sPatel%20World%20Tours!5e0!3m2!1sen!2sin!4v1784615888809!5m2!1sen!2sin"
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                             title="VJKM Self Finance College Map Location"

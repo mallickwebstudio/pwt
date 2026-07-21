@@ -5,64 +5,44 @@ import React from 'react'
 
 export const teamData = [
   {
-    id: "1",
-    name: "Rahul Patel",
+    name: "Chirag Patel",
     designation: "Founder & Travel Consultant",
     image: {
-      url: "/person.png",
-      alt: "Rahul Patel",
+      // url: "/images/team/chirag.jpeg",
+      url: "/images/team/chirag.png",
+      alt: "Chirag Patel profile image",
     },
     description: "Passionate about creating unforgettable travel experiences with personalized itineraries.",
   },
   {
-    id: "2",
-    name: "Priya Shah",
-    designation: "Tour Coordinator",
+    name: "Ankush Khosla",
+    designation: "Manager",
     image: {
-      url: "/person.png",
-      alt: "Priya Shah",
+      // url: "/images/team/ankush.jpeg",
+      url: "/images/team/ankush.png",
+      alt: "Ankush Khosla profile image",
     },
     description: "Ensures every trip is well-planned, organized, and hassle-free for our travelers.",
   },
   {
-    id: "3",
-    name: "Amit Mehta",
-    designation: "Visa & Ticketing Specialist",
+    name: "Tulsi Khosla",
+    designation: "Sales Head",
     image: {
-      url: "/person.png",
-      alt: "Amit Mehta",
-    },
-    description: "Provides expert assistance with visa applications, flight bookings, and travel documentation.",
-  },
-  {
-    id: "1",
-    name: "Rahul Patel",
-    designation: "Founder & Travel Consultant",
-    image: {
-      url: "/person.png",
-      alt: "Rahul Patel",
-    },
-    description: "Passionate about creating unforgettable travel experiences with personalized itineraries.",
-  },
-  {
-    id: "2",
-    name: "Priya Shah",
-    designation: "Tour Coordinator",
-    image: {
-      url: "/person.png",
-      alt: "Priya Shah",
+      // url: "/images/team/tulsi.jpeg",
+      url: "/images/team/tulsi.png",
+      alt: "Tulsi Khosla profile image",
     },
     description: "Ensures every trip is well-planned, organized, and hassle-free for our travelers.",
   },
   {
-    id: "3",
-    name: "Amit Mehta",
-    designation: "Visa & Ticketing Specialist",
+    name: "Mansi Patel",
+    designation: "Sales Head",
     image: {
-      url: "/person.png",
-      alt: "Amit Mehta",
+      // url: "/images/team/mansi.jpeg",
+      url: "/images/team/mansi.png",
+      alt: "Mansi Patel profile image",
     },
-    description: "Provides expert assistance with visa applications, flight bookings, and travel documentation.",
+    description: "Ensures every trip is well-planned, organized, and hassle-free for our travelers.",
   },
 ];
 
@@ -81,13 +61,13 @@ export default function Team() {
 
               <div
                 // className="absolute inset-0 top-1/2 bottom-1/2 -translate-y-1/2 left-1/2 right-1/2 -translate-x-1/2 size-30  blur-[500px] bg-primary"
-                className="absolute inset-0 bg-linear-to-t from-primary to-primary/10"
+                className="absolute inset-0 bg-linear-to-t from-blue-700/70 to-blue-500/10"
                 aria-hidden
               />
 
               <div className="absolute inset-0 top-1/2 bottom-1/2 -translate-y-1/2 left-[55%] right-1/2 -translate-x-1/2 size-full">
                 <Image
-                  className="size-full object-contain select-none pointer-events-none group-hover:scale-75 transition-all duration-300"
+                  className="size-full object-contain opacity-50 select-none pointer-events-none group-hover:opacity-100 group-hover:scale-75 transition-all duration-300"
                   width={32}
                   height={32}
                   src="/images/logo/logo.png"
@@ -108,11 +88,13 @@ export default function Team() {
                 />
               </figure>
 
-              <header className="absolute inset-0 top-auto pt-10 p-1 sm:p-3 bg-linear-to-t from-black via-black/50 to-transparent text-white text-center">
-                <h3 className="h5 font-bold font-script text-secondary text-shadow-primary">
+              <header className="absolute inset-0 top-auto p-1 sm:p-3 pt-12! bg-linear-to-t from-black to-transparent text-white text-center">
+                {/* <div className="pt-12 absolute inset-0 top-auto size-full bg-linear-to-t from-black to-transparent" aria-hidden /> */}
+
+                <h3 className="relative h5 font-bold font-heading text-secondary text-shadow-primary">
                   {item.name}
                 </h3>
-                <p className="mt-1 text-white/80 text-xs sm:text-sm line-clamp-2">
+                <p className="relative mt-1 text-white/80 text-xs sm:text-sm line-clamp-2">
                   {item.designation}
                 </p>
 

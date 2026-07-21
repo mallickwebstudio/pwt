@@ -1,5 +1,4 @@
-import { TourSlug } from "@/types";
-import { HighlightsData } from "@/types";
+import { TourSlug, HighlightsData } from "@/types";
 
 export const highlightsData: Record<TourSlug, HighlightsData> = {
   "dubai-abu-dhabi-yas-island": {

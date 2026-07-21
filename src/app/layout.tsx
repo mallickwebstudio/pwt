@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Lemon, Merienda, Mrs_Sheppards, Permanent_Marker, Poppins, Tangerine } from "next/font/google";
+import { Geist_Mono, Lemon, Merienda, Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/layout/navbar";
@@ -7,6 +7,7 @@ import Footer from "@/components/layout/footer";
 import { siteConfig } from "@/lib/metadata";
 import Contact from "@/components/section/contact";
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
+import OverscreenWhatsappButton from "@/components/other/overscreen-whatsapp-button";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -53,7 +54,8 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", lemon.variable, tangerine.variable, geistMono.variable, poppins.variable, "font-sans")}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="relative min-h-full flex flex-col">
+        <OverscreenWhatsappButton />
         <Navbar />
         <NuqsAdapter>
           <main className="flex-1">

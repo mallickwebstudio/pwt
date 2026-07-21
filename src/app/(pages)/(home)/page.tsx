@@ -10,7 +10,7 @@ import BookingSteps from './booking-steps'
 // import Gallery from './gallery'
 import Activities from './activities'
 // import DestinationListMap from './destination-list-map'
-// import Upcoming from './upcoming'
+import Upcoming from './upcoming'
 import Team from './team'
 import Faq from './faq'
 // import Partntrs from './partntrs'
@@ -26,7 +26,7 @@ export default function page() {
             {/* <Partntrs /> */}
             <Destination />
             <Package />
-            {/* <Upcoming /> */}
+            <Upcoming />
             <WhyUs />
             <Category />
             <Offer />
@@ -35,7 +35,6 @@ export default function page() {
             {/* <Gallery /> */}
             <Activities />
             {/* <DestinationListMap /> */}
-            {/* Popular pages specific package banner in a carousel wrapped in a border-section left side vertical card style image-3 right side details, description, view more */}
             <Team />
             <Faq />
             {/* <Partntrs /> */}

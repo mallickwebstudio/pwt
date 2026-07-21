@@ -32,7 +32,6 @@ export default function PackageHero({
             </div>
 
             <div className="mt-6 w-fit flex items-center justify-center flex-wrap">
-
                 <LeadDialog
                     trigger={<Button size="lg">Get a Quote</Button>}
                     defaultPackageSlug={data.slug}

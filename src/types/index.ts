@@ -22,7 +22,6 @@ export const TOUR_SLUGS = [
 export type TourSlug = typeof TOUR_SLUGS[number];
 
 export interface BasePackage {
-  id: string;
   slug: TourSlug;
   title: string;
   description: string;
@@ -82,6 +81,26 @@ export interface SeoData {
   metaTitle: string;
   metaDescription: string;
 }
+
+// 
+
+export type DepartureStatus = "AVAILABLE" | "FILLING_FAST" | "SOLD_OUT";
+
+export interface TourDateInstance {
+  id: string;
+  departureDate: string; // ISO 8601: YYYY-MM-DD
+  returnDate: string;    // ISO 8601: YYYY-MM-DD
+  availableSeats: number;
+  status: DepartureStatus;
+}
+
+export interface PackageRouteMeta {
+  departureCity: string;
+  returnCity: string;
+  defaultTotalSeats: number;
+  dates: TourDateInstance[];
+}
+
 
 ////////////////////////////////////////
 ////////////////////////////////////////

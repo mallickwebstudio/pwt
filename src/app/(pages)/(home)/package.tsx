@@ -67,7 +67,7 @@ export default function Package() {
 
             return (
               <CarouselItem
-                key={`${data.id}-HomePackage`}
+                key={`${data.slug}-HomePackage`}
                 className="basis-[80%] md:basis-1/2 xl:basis-1/3"
               >
                 <div className={cn("transition-all duration-300 ease-out", scaleClass)}>

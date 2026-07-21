@@ -26,7 +26,7 @@ export default function PackageCard({ data }: { data: BasePackage }) {
                         height={300}
                     />
                     <div className="absolute inset-0 top-auto pt-6 p-2 bg-linear-to-t from-black to-transparent flex items-center justify-between">
-                        <Badge variant="secondary" className={cn(data.category === "Domestic" ? "text-tone-yellow" : "text-primary", "font-bold")}>
+                        <Badge variant="secondary" className={cn(data.category === "Domestic" ? "text-tone-yellow" : "text-primary", "font-bold uppercase")}>
                             {data.category}
                         </Badge>
 

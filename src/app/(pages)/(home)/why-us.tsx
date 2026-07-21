@@ -20,62 +20,52 @@ const whyChooseUs = [
   {
     icon: Hotel,
     title: "Premium Stay",
-    description:
-      "Stay at carefully selected premium hotels for maximum comfort and relaxation.",
+    description: "Stay at carefully selected premium hotels for maximum comfort and relaxation.",
   },
   {
     icon: UtensilsCrossed,
     title: "Maximum Meals",
-    description:
-      "Enjoy delicious breakfast, lunch, and dinner with generous meal inclusions.",
+    description: "Enjoy delicious breakfast, lunch, and dinner with generous meal inclusions.",
   },
   {
     icon: ChefHat,
     title: "Food Experts",
-    description:
-      "Indian, Jain, and Swaminarayan meals thoughtfully arranged by our food specialists.",
+    description: "Indian, Jain, and Swaminarayan meals thoughtfully arranged by our food specialists.",
   },
   {
     icon: Camera,
     title: "Maximum Sightseeing",
-    description:
-      "Visit more attractions and create unforgettable memories without missing the highlights.",
+    description: "Visit more attractions and create unforgettable memories without missing the highlights.",
   },
   {
     icon: Droplets,
     title: "Unlimited Water",
-    description:
-      "Complimentary drinking water throughout your journey to keep you refreshed.",
+    description: "Complimentary drinking water throughout your journey to keep you refreshed.",
   },
   {
     icon: Trees,
     title: "Premium Safari",
-    description:
-      "Experience exciting wildlife safaris with premium vehicles and expert planning.",
+    description: "Experience exciting wildlife safaris with premium vehicles and expert planning.",
   },
   {
     icon: Ship,
     title: "Premium Yacht / Cruise",
-    description:
-      "Enjoy luxury yacht rides and memorable cruise experiences on selected tours.",
+    description: "Enjoy luxury yacht rides and memorable cruise experiences on selected tours.",
   },
   {
     icon: Bus,
     title: "Own Transportation",
-    description:
-      "Travel in dedicated, comfortable vehicles for a smooth and hassle-free experience.",
+    description: "Travel in dedicated, comfortable vehicles for a smooth and hassle-free experience.",
   },
   {
     icon: Users,
     title: "Experienced Tour Manager",
-    description:
-      "Friendly and knowledgeable tour managers accompany you throughout the trip.",
+    description: "Friendly and knowledgeable tour managers accompany you throughout the trip.",
   },
   {
     icon: Headset,
     title: "24×7 Customer Support",
-    description:
-      "Round-the-clock assistance before, during, and after your journey.",
+    description: "Round-the-clock assistance before, during, and after your journey.",
   },
 ];
 

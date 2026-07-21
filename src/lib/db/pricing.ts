@@ -51,10 +51,10 @@ export const pricingData: Record<TourSlug, PackagePricing> = {
         taxes: "5% GST & 5% TCS extra"
     },
     "bali-exotic-escape": { startingPrice: 65000, currency: "INR", note: "Contact for custom quote" },
-    "phuket-krabi-escape": { startingPrice: 58000, currency: "INR", note: "Contact for custom quote" },
+    "phuket-krabi-escape": { startingPrice: 65000, currency: "INR", note: "Contact for custom quote" },
     "goa-beach-bliss": { startingPrice: 18500, currency: "INR", note: "Customizable based on hotel choice" },
     "kerala-backwaters-munnar": { startingPrice: 28500, currency: "INR", note: "Customizable" },
-    "shimla-mandi-manali": { startingPrice: 24500, currency: "INR", note: "Customizable" },
+    "shimla-mandi-manali": { startingPrice: 21700, currency: "INR", note: "Customizable" },
     "royal-udaipur-customize": { startingPrice: 19500, currency: "INR", note: "Tailor-made for families & couples" },
     "kashmir-paradise-on-earth": { startingPrice: 32000, currency: "INR", note: "Customizable" },
     "sikkim-gangtok-darjeeling": { startingPrice: 29500, currency: "INR", note: "Customizable" }

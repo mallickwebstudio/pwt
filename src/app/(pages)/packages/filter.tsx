@@ -291,7 +291,7 @@ export default function CategoryFilterTour() {
                 {/* Filtered Package Grid — replace with your existing card component */}
                 <main className="mt-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                     {filteredPackages.map((data) => (
-                        <div key={data.id}>
+                        <div key={data.slug}>
                             <PackageCard data={data} />
 
                             {/* <div key={data.id} className="border rounded-lg p-4">

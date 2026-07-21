@@ -1,3 +1,5 @@
+"use client"
+
 import Section from "@/components/section/section";
 import Image from "next/image";
 import {
@@ -5,7 +7,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel"
-
+import Autoplay from "embla-carousel-autoplay"
 
 export default function Activities() {
   return (
@@ -17,6 +19,7 @@ export default function Activities() {
     >
       <Carousel
         opts={{ align: "center", loop: true }}
+        plugins={[Autoplay({ delay: 3000 }),]}
         className="mt-10 w-full"
       >
         <CarouselContent wrapperClassName="overflow-visible!">

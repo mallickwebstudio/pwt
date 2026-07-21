@@ -4,8 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, Plane, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { siteConfig } from "@/lib/metadata";
+import CtaButton from "@/components/other/cta-button";
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -14,7 +16,6 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger
 } from "@/components/ui/navigation-menu";
-import { siteConfig } from "@/lib/metadata";
 
 type NavItems = {
     label: string;
@@ -144,16 +145,7 @@ function NavbarCtaAction({ className }: { className?: string }) {
     return (
         <ul className={className}>
             <li>
-                <Link
-                    className={cn(buttonVariants(), "relative w-full bg-accent hover:text-accent hover:bg-primary text-primary group")}
-                    href="#"
-                    aria-label="Log in"
-                >
-                    <Plane className="relative left-0 group-hover:left-[calc(100%-1rem)] transition-all" />
-                    <span className="relative left-0 group-hover:-left-5 transition-all">
-                        Plan My Trip
-                    </span>
-                </Link>
+                <CtaButton />
             </li>
         </ul>
     )
