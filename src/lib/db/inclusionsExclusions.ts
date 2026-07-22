@@ -1,6 +1,53 @@
 import { InclusionsExclusions, TourSlug } from "@/types";
 
 export const inclusionsExclusionsData: Partial<Record<TourSlug, InclusionsExclusions>> = {
+  "dubai-classic-6d": {
+    inclusions: [
+      "Return Flight from Ahmedabad / Surat / Mumbai with confirmed PNR",
+      "30-Day Single Entry UAE Visa",
+      "5 Nights Stay at a Premium Hotel with Confirmation Number",
+      "1 Lunch, 6 Dinners & 5 Breakfasts (Including 1 Club Dinner; Jain/Swaminarayan available)",
+      "Half-Day Dubai City Tour with La Mer Beach",
+      "One-Way Monorail Ticket with Atlantis View",
+      "Dubai Fountain Show, Dubai Mall Waterfall & Aquarium (outside view)",
+      "Burj Khalifa 124th & 125th Floor (Non-prime) Tickets",
+      "Abu Dhabi City Tour with Sheikh Zayed Grand Mosque & BAPS Temple",
+      "4x4 Land Cruiser Desert Safari with Premium Camp Snacks & Buffet Dinner",
+      "2 Hours White Glass Yacht Ride with Indian Dinner",
+      "Complimentary Limousine Ride",
+      "Unlimited Water during the tour",
+      "Tourism Dirham Tax & 5% Dubai VAT",
+      "Airport & Inter-Hotel Transfers"
+    ],
+    exclusions: [
+      "5% GST & 2% TCS",
+      "Quad Biking in Desert Safari (Direct Payable)",
+      "Travel Insurance & personal expenses",
+      "Any other meals or sightseeing not mentioned in inclusions"
+    ]
+  },
+  // "dubai-abu-dhabi-yas-island": {
+  //   inclusions: [
+  //     "Return Flight from Ahmedabad / Surat / Mumbai with confirmed PNR",
+  //     "30-Day Single Entry UAE Visa",
+  //     "4 Nights Stay at Premium Dubai Hotel + 1 Night Stay at Yas Island Hotel",
+  //     "1 Lunch, 6 Dinners & 6 Breakfasts (Jain, Swaminarayan, Agyaras Upvas available)",
+  //     "Full-Day Pass to Any 1 Yas Island Theme Park (Ferrari World / SeaWorld / Warner Bros / Waterworld)",
+  //     "Half-Day Dubai City Tour with Monorail Ride",
+  //     "Burj Khalifa 124th & 125th Floor Entry Tickets",
+  //     "VIP Desert Safari with 4x4 Pick-up, On-table Snacks, 5 Live Shows & Camp Garba",
+  //     "2 Hours Luxury Glass Yacht Ride with Indian Dinner",
+  //     "Complimentary Limousine Ride with Retro Bollywood Music",
+  //     "Abu Dhabi City Tour: Sheikh Zayed Mosque, Emirates Palace, Etihad Towers, Corniche, BAPS Temple & Yas Mall",
+  //     "Tourism Dirham Tax & 5% Dubai VAT",
+  //     "Unlimited Water & Dedicated Bus/Car Transportation"
+  //   ],
+  //   exclusions: [
+  //     "5% GST & 2% TCS",
+  //     "Quad Biking at Red Dunes (Payable directly)",
+  //     "Travel Insurance & personal accident expenses"
+  //   ]
+  // },
   "dubai-abu-dhabi-yas-island": {
     inclusions: [
       "Return Flight from Ahmedabad / Abu Dhabi with confirmed PNR",

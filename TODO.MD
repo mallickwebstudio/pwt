@@ -32,23 +32,28 @@
     -> Complete Terms of service page, all section turn by turn
     -> Complete Contact us page, all section turn by turn
     -> Update Footer
-
-# TODO TODAY
     -> Complete About us page, all section turn by turn
-    
-    -> Complete products-details page, all section turn by turn
     -> Complete Services page, all section turn by turn
-    -> Fix Home Hero animation
     -> Add home search function
     -> Update SEO
         -> favicon
         -> Metadata
         -> sitemap
+        -> JsonLd
         -> robot.txt
         -> llms (Later)
         -> OG
+    -> Add 2 more packages
+    -> Images for 
+        -> Activities
+
+# TODO TODAY
+    -> Remove text from official given Images by ankush
+    -> Images for 
+        -> Services
+    -> Fix Home Hero animation
+    -> Complete products-details page, all section turn by turn
     -> Add Basic animations to the site
-    -> Images for activities Section for home page
 
 # TODO LATER
     -> Complete Home page, all section turn by turn

@@ -53,7 +53,7 @@ const socialLinks = [
         <MessageCircle className="size-3.5" />
       </div>
     ),
-    label: "Whatsapp Us", href: siteConfig.links.whatsapp
+    label: "Chat on Whatsapp", href: siteConfig.links.whatsapp
   },
   {
     icon: (
@@ -68,12 +68,14 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer
-      className="relative bg-linear-to-t bg-grad-mix-light"
+      // className="relative bg-linear-to-t bg-grad-mix-light"
+      className="relative bg-secondary"
       aria-labelledby="footer-heading"
       role="region"
     >
+      <div className="absolute inset-0 size-full bg-linear-to-tl from-red-800/30 via-tone-yellow/40 to-transparent" aria-hidden />
       <h2 id="footer-heading" className="sr-only">Footer</h2>
-      <div className="mx-auto container px-6 py-12 md:p-16">
+      <div className="relative mx-auto container px-6 py-12 md:p-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-8">
           {/* Newsletter section */}
           <section className="xl:col-span-2">

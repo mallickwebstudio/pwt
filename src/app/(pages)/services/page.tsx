@@ -4,10 +4,44 @@ import Cta from "@/components/section/cta";
 import BookingSteps from "@/components/section/booking-steps";
 import { ServiceOverview } from "./service-overview";
 import Hero from "@/components/section/hero";
+import { Metadata } from "next";
+import { JsonLd } from "@/components/other/json-ld";
+import { jsonLd } from "@/lib/metadata";
+
+export const metadata: Metadata = {
+    title: "Travel Services",
+    description: "Explore our travel services including visa assistance, passport services, air ticket booking, land packages, and customized tour planning.",
+
+    alternates: {
+        canonical: "/services",
+    },
+
+    openGraph: {
+        title: "Travel Services | Patel World Tour",
+        description:
+            "Professional travel services designed to make every journey smooth and hassle-free.",
+        url: "/services",
+        images: ["/og.png"],
+    },
+};
 
 export default function page() {
     return (
         <>
+            <JsonLd
+                data={jsonLd.services}
+                breadcrumb={[
+                    {
+                        name: "Home",
+                        href: "/",
+                    },
+                    {
+                        name: "Services",
+                        href: "/services",
+                    },
+                ]}
+            />
+            
             <Hero
                 headerCenter
                 h1="Services"

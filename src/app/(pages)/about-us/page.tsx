@@ -6,10 +6,42 @@ import Team from "@/components/section/team";
 import WhyPwt from "@/components/section/why-pwt";
 import MissionVision from "./mission-vision";
 import FeaturedPackages from "@/components/section/featured-packages";
+import { Metadata } from "next";
+import { JsonLd } from "@/components/other/json-ld";
+import { jsonLd } from "@/lib/metadata";
+
+export const metadata: Metadata = {
+    title: "About Us",
+    description: "Learn about Patel World Tour, our mission, experienced travel consultants, and commitment to creating unforgettable domestic and international travel experiences.",
+
+    alternates: {
+        canonical: "/about-us",
+    },
+
+    openGraph: {
+        title: "About Patel World Tour",
+        description: "Discover who we are, what we do, and why thousands of travelers trust Patel World Tour.",
+        url: "/about-us",
+        images: ["/og.png"],
+    },
+};
 
 export default function page() {
     return (
         <>
+            <JsonLd
+                data={jsonLd.about}
+                breadcrumb={[
+                    {
+                        name: "Home",
+                        href: "/",
+                    },
+                    {
+                        name: "About Us",
+                        href: "/about-us",
+                    },
+                ]}
+            />
             <Hero
                 h1="Your Trusted Travel Partner for Every Journey"
                 p="At Patel World Tour, we believe travel is more than visiting new places—it's about creating unforgettable experiences. We provide complete travel solutions including domestic and international tour packages, visa assistance, flight ticket bookings, passport services, land packages, and customized travel planning. With a customer-first approach and attention to every detail, our team is committed to making every journey smooth, comfortable, and memorable."

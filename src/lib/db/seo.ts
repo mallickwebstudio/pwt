@@ -1,6 +1,14 @@
 import { SeoData, TourSlug } from "@/types";
 
 export const seoData: Record<TourSlug, SeoData> = {
+  "dubai-classic-6d": {
+    metaTitle: "6 Days Dubai & Abu Dhabi Tour Package @ ₹69,700 | Patel World Tour",
+    metaDescription: "Book 6 Days Dubai & Abu Dhabi budget tour with Burj Khalifa, Yacht Dinner, Desert Safari, Limousine ride and flights included."
+  },
+  // "dubai-abu-dhabi-yas-island": {
+  //   metaTitle: "Dubai & Yas Island Theme Park Tour @ ₹84,700 | Patel World Tour",
+  //   metaDescription: "Book 6 Days Dubai & Yas Island package with stay at Yas Island, Theme Park entry, Burj Khalifa, VIP Desert Safari & Yacht Dinner."
+  // }
   "dubai-abu-dhabi-yas-island": {
     metaTitle: "Dubai & Yas Island Tour Package | Patel World Tour",
     metaDescription: "Book 6 Days Dubai & Abu Dhabi tour package with Burj Khalifa, Desert Safari, Yacht Dinner and Yas Island Theme Parks."

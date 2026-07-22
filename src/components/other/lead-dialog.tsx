@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useMemo, useState, type ReactNode } from "react";
-import { LoaderIcon, Check } from "lucide-react";
+import { LoaderIcon, ChevronsRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { packagesData } from "@/lib/db/packages";
@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/dialog";
 import { Textarea } from "../ui/textarea";
 import { handleFormSubmit } from "@/lib/contact";
+import { Marquee } from "./marquee";
 
 /**
  * ------------------------------------------------------------
@@ -148,17 +149,19 @@ export default function LeadDialog({
                     </DialogTitle>
                 </DialogHeader>
 
-                <ul className="grid grid-cols-1 gap-1.5 text-sm text-muted-foreground sm:grid-cols-3">
+                <Marquee reverse pauseOnHover className="-mt-4 -mb-2 [--duration:20s]">
                     {TRUST_POINTS.map((point) => (
-                        <li key={point} className="flex items-start gap-1.5 text-xs">
-                            <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
+                        <div key={point} className="flex items-start gap-1.5 text-xs">
+                            <ChevronsRight className="mt-px size-3.5 shrink-0 text-primary" />
                             {point}
-                        </li>
+                        </div>
                     ))}
-                </ul>
+                    {/* {firstRow.map((review) => (
+                        <ReviewCard key={review.username} {...review} />
+                    ))} */}
+                </Marquee>
 
                 <form onSubmit={handleSubmit} className="space-y-3">
-
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
                             <Label htmlFor={`${uid}-name`}>

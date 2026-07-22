@@ -2,6 +2,28 @@ import { BasePackage } from "@/types";
 
 export const packagesData: BasePackage[] = [
   {
+    slug: "dubai-classic-6d",
+    title: "Dubai & Abu Dhabi Classic Tour",
+    description: "Experience 6 days in Dubai and Abu Dhabi featuring Burj Khalifa 124th floor access, a 2-hour glass yacht dinner cruise, VIP 4x4 desert safari, complimentary limousine ride, and La Mer beach visit.",
+    status: "PUBLISHED",
+    category: "International",
+    isFeatured: true,
+    flyerHref: "/flyers/dubai-classic-6d.pdf",
+    duration: { nights: 5, days: 6 },
+    destinations: ["Dubai", "Abu Dhabi"]
+  },
+  // {
+  //   slug: "dubai-abu-dhabi-yas-island",
+  //   title: "Dubai, Abu Dhabi & Yas Island Theme Park Experience",
+  //   description: "The ultimate 6-day UAE adventure featuring Burj Khalifa, luxury glass yacht dinner, 4x4 VIP desert safari with live shows, a overnight stay on Yas Island with Theme Park access, and Abu Dhabi BAPS Temple visit.",
+  //   status: "PUBLISHED",
+  //   category: "International",
+  //   isFeatured: true,
+  //   flyerHref: "/flyers/dubai-yas-island.pdf",
+  //   duration: { nights: 5, days: 6 },
+  //   destinations: ["Dubai", "Abu Dhabi", "Yas Island"]
+  // },
+  {
     slug: "dubai-abu-dhabi-yas-island",
     title: "Dubai & Abu Dhabi Yas Island Experience",
     description: "Experience the luxury of Dubai and Abu Dhabi featuring 124th-floor Burj Khalifa access, a private yacht dinner, VIP desert safari, and Theme Park adventures at Yas Island.",

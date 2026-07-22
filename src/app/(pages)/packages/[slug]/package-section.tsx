@@ -30,46 +30,48 @@ import {
  */
 export function PackageHighlights({ data }: { data: HighlightsData }) {
   return (
-    <Section>
-      <header className={cn("grid grid-cols-1 lg:grid-cols-2 gap-8")}>
-        <div className={cn("max-w-2xl")}>
-          <h2 className="h2">Highlights</h2>
-          <p className="mt-3 md:mt-4 md:text-lg text-muted-foreground">What makes this tour special</p>
-        </div>
+    <Section className="overflow-scroll">
+      <header className={cn("relative grid grid-cols-1 lg:grid-cols-2 gap-8")}>
+        <div className="lg:sticky lg:top-20 h-fit">
+          <div className={cn("max-w-2xl")}>
+            <h2 className="h2">Highlights</h2>
+            <p className="mt-3 md:mt-4 md:text-lg text-muted-foreground">What makes this tour special</p>
+          </div>
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-2">
-          {data.highlights.map((item, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-              <span>{item}</span>
-            </div>
-          ))}
-        </div>
-      </header>
-
-      {data.activities.length > 0 && (
-        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {data.activities.map((activity, i) => (
-            <div
-              key={i}
-              className="group relative aspect-square overflow-hidden rounded-xl"
-            >
-              <Image
-                fill
-                sizes="(max-width: 768px) 50vw, 25vw"
-                // src={activity.imageSrc}
-                src={"/images/common/03.webp"}
-                alt={activity.label}
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/0 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-3 text-sm font-medium text-white">
-                {activity.label}
+          <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-2 lg:col-span-2">
+            {data.highlights.map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <span>{item}</span>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      )}
+
+        {data.activities.length > 0 && (
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
+            {data.activities.map((activity, i) => (
+              <div
+                key={i}
+                className="group relative aspect-square overflow-hidden rounded-xl"
+              >
+                <Image
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  src={activity.imageSrc}
+                  // src={"/images/common/03.webp"}
+                  alt={activity.label}
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/0 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-3 text-sm font-medium text-white">
+                  {activity.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </header>
     </Section>
   );
 }
@@ -95,22 +97,22 @@ export function PackageGallery({
       p="A closer look at what awaits you"
       className="bg-secondary/30"
     >
-      <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3">
+      <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
         {images.map((image, i) => (
           <div
             key={i}
-            className={cn(
-              "relative aspect-square overflow-hidden rounded-xl",
-              i === 0
-                ? "col-span-2 row-span-2 aspect-square md:aspect-video"
-                : "aspect-square"
-            )}
+            // className={cn(
+            //   "relative aspect-square overflow-hidden rounded-xl",
+            //   i === 0
+            //     ? "col-span-2 row-span-2 aspect-square md:aspect-video"
+            //     : "aspect-square"
+            // )}
+            className={cn("relative aspect-video overflow-hidden rounded-xl")}
           >
             <Image
               fill
               sizes="(max-width: 768px) 50vw, 33vw"
-              // src={image.url}
-              src={"/images/common/01.webp"}
+              src={image.url}
               alt={image.altText || title}
               className="object-cover transition-transform duration-300 hover:scale-105"
             />

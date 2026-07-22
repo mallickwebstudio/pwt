@@ -38,14 +38,14 @@ export default function OverscreenWhatsappButton() {
         <Link
             className={cn(
                 buttonVariants(),
-                'fixed right-4 bottom-4 z-50 animate-bounce border shadow-lg',
+                'fixed right-4 bottom-12 z-50 animate-bounce border shadow-lg',
                 'var-whatsapp',
             )}
             href={siteConfig.links.whatsapp}
         >
             <MessageCircle className="size-4" />
             {/* <RiWhatsappLine /> */}
-            Ask on Whatsapp
+            Chat on Whatsapp
         </Link>
     )
 }

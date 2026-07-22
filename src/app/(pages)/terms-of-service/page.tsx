@@ -1,4 +1,15 @@
 import Hero from "@/components/section/hero";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Terms of Service",
+    description:
+        "Review the terms and conditions governing the use of Patel World Tour's website and travel services.",
+
+    alternates: {
+        canonical: "/terms-of-service",
+    },
+};
 
 export default function page() {
     return (
@@ -12,6 +23,7 @@ export default function page() {
         </>
     )
 }
+
 function TermsOfService() {
     return (
         <section className="prose">

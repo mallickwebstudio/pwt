@@ -2,6 +2,34 @@ import { PackageRouteMeta, TourSlug } from "@/types";
 
 // Keyed dictionary for zero-redundancy O(1) slug lookup
 export const tourDatesData: Partial<Record<TourSlug, PackageRouteMeta>> = {
+    "dubai-classic-6d": {
+        departureCity: "Ahmedabad",
+        returnCity: "Ahmedabad",
+        defaultTotalSeats: 30,
+        dates: [
+            { id: "dc-2026-08-10", departureDate: "2026-08-10", returnDate: "2026-08-15", availableSeats: 8, status: "FILLING_FAST" },
+            { id: "dc-2026-09-05", departureDate: "2026-09-05", returnDate: "2026-09-10", availableSeats: 20, status: "AVAILABLE" }
+        ]
+    },
+    // "dubai-abu-dhabi-yas-island": {
+    //     departureCity: "Ahmedabad",
+    //     returnCity: "Ahmedabad",
+    //     defaultTotalSeats: 30,
+    //     dates: [
+    //         { id: "dy-2026-08-18", departureDate: "2026-08-18", returnDate: "2026-08-23", availableSeats: 5, status: "FILLING_FAST" },
+    //         { id: "dy-2026-09-12", departureDate: "2026-09-12", returnDate: "2026-09-17", availableSeats: 18, status: "AVAILABLE" }
+    //     ]
+    // },
+
+    "dubai-abu-dhabi-yas-island": {
+        departureCity: "Ahmedabad",
+        returnCity: "Ahmedabad",
+        defaultTotalSeats: 20,
+        dates: [
+            { id: "dxb-2026-08-10", departureDate: "2026-08-10", returnDate: "2026-08-16", availableSeats: 6, status: "AVAILABLE" },
+            { id: "dxb-2026-09-05", departureDate: "2026-09-05", returnDate: "2026-09-11", availableSeats: 14, status: "AVAILABLE" }
+        ]
+    },
     "singapore-malaysia-7d": {
         departureCity: "Ahmedabad",
         returnCity: "Ahmedabad",
@@ -69,14 +97,4 @@ export const tourDatesData: Partial<Record<TourSlug, PackageRouteMeta>> = {
             { id: "vn-2026-10-23", departureDate: "2026-10-23", returnDate: "2026-10-31", availableSeats: 25, status: "AVAILABLE" }
         ]
     },
-
-    "dubai-abu-dhabi-yas-island": {
-        departureCity: "Ahmedabad",
-        returnCity: "Ahmedabad",
-        defaultTotalSeats: 20,
-        dates: [
-            { id: "dxb-2026-08-10", departureDate: "2026-08-10", returnDate: "2026-08-16", availableSeats: 6, status: "AVAILABLE" },
-            { id: "dxb-2026-09-05", departureDate: "2026-09-05", returnDate: "2026-09-11", availableSeats: 14, status: "AVAILABLE" }
-        ]
-    }
 };

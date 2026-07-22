@@ -1,5 +1,7 @@
 export const TOUR_SLUGS = [
   // International
+  "dubai-classic-6d",
+  "dubai-abu-dhabi-yas-island",
   "dubai-abu-dhabi-yas-island",
   "singapore-malaysia-7d",
   "singapore-malaysia-thailand-11d",

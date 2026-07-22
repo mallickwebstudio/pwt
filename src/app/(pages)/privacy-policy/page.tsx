@@ -1,4 +1,15 @@
 import Hero from "@/components/section/hero";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Privacy Policy",
+    description:
+        "Read Patel World Tour's Privacy Policy to understand how we collect, use, and protect your personal information.",
+
+    alternates: {
+        canonical: "/privacy-policy",
+    },
+};
 
 export default function page() {
     return (
@@ -12,7 +23,6 @@ export default function page() {
         </>
     )
 }
-
 
 function PrivacyPolicy() {
     return (

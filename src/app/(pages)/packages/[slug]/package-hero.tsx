@@ -2,7 +2,7 @@ import Link from "next/link";
 import { CalendarDays, IndianRupee, MapPin, Tag } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import Hero from "@/components/section/hero";
 import { BasePackage, PackagePricing } from "@/types";
 import LeadDialog from "@/components/other/lead-dialog";
@@ -78,7 +78,7 @@ export default function PackageHero({
 
             <div className="mt-6 w-fit flex items-center justify-center flex-wrap gap-4">
                 <LeadDialog
-                    trigger={<Button size="lg">Request Booking</Button>}
+                    trigger={<span className={buttonVariants({ size: "lg" })}>Request Booking</span>}
                     defaultPackageSlug={data.slug}
                     ctaLabel="Request Booking"
                 />

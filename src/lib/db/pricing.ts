@@ -1,15 +1,35 @@
 import { PackagePricing, TourSlug } from "@/types";
 
 export const pricingData: Record<TourSlug, PackagePricing> = {
-    "dubai-abu-dhabi-yas-island": {
-        startingPrice: 84700,
-        currency: "INR",
-        adultRate: 84700,
-        childNoBed5to12: 79700,
-        childNoBed2to5: 62700,
-        infantRate: 15700,
-        taxes: "5% GST & 2% TCS extra"
-    },
+    "dubai-classic-6d": {
+    startingPrice: 69700,
+    currency: "INR",
+    adultRate: 69700,
+    childNoBed5to12: 64700,
+    childNoBed2to5: 52700,
+    infantRate: 15700,
+    taxes: "5% GST & 2% TCS Extra",
+    note: "Prices starting per person on twin-sharing basis."
+  },
+  "dubai-abu-dhabi-yas-island": {
+    startingPrice: 84700,
+    currency: "INR",
+    adultRate: 84700,
+    childNoBed5to12: 79700,
+    childNoBed2to5: 62700,
+    infantRate: 15700,
+    taxes: "5% GST & 2% TCS Extra",
+    note: "Includes 1-Night luxury stay on Yas Island with theme park access."
+  },
+    // "dubai-abu-dhabi-yas-island": {
+    //     startingPrice: 84700,
+    //     currency: "INR",
+    //     adultRate: 84700,
+    //     childNoBed5to12: 79700,
+    //     childNoBed2to5: 62700,
+    //     infantRate: 15700,
+    //     taxes: "5% GST & 2% TCS extra"
+    // },
     "singapore-malaysia-7d": {
         startingPrice: 107000,
         currency: "INR",

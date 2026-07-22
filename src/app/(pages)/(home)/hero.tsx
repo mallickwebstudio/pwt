@@ -11,7 +11,7 @@ export default function Hero() {
             <HeroBackground />
 
             {/* Overlay */}
-            {/* <div className="absolute inset-0 bg-neutral-950/70" aria-hidden="true" /> */}
+            <div className="absolute inset-0 bg-neutral-950/50" aria-hidden="true" />
 
             <div className="relative mx-auto container px-6 py-12 md:p-16 lg:py-20 flex h-full! items-center justify-center">
                 {/* Text Content */}

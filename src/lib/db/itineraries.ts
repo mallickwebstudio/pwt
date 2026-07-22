@@ -1,6 +1,22 @@
 import { ItineraryDay, TourSlug } from "@/types";
 
 export const itinerariesData: Partial<Record<TourSlug, ItineraryDay[]>> = {
+  "dubai-classic-6d": [
+    { day: 1, title: "Arrival in UAE + 2-Hour Glass Yacht Dinner" },
+    { day: 2, title: "Dubai City Tour + Monorail + Burj Khalifa (124th/125th Floor) + Dubai Mall" },
+    { day: 3, title: "4x4 Desert Safari with Red Dunes Photo Stop & Premium Camp Dinner" },
+    { day: 4, title: "Limousine Ride + Shopping at Meena Bazaar & Gold Souk" },
+    { day: 5, title: "Leisure Morning + 2-Hour Beach Visit (La Mer)" },
+    { day: 6, title: "Abu Dhabi City Tour + Sheikh Zayed Mosque + BAPS Temple + Departure" }
+  ],
+  // "dubai-abu-dhabi-yas-island": [
+  //   { day: 1, title: "Arrival in UAE + 2-Hour Luxury Glass Yacht Dinner" },
+  //   { day: 2, title: "Dubai City Tour + Palm Monorail + Burj Khalifa 124th/125th Floor + Fountain Show" },
+  //   { day: 3, title: "VIP 4x4 Desert Safari + Cultural Live Shows + On-Table Snacks & Garba" },
+  //   { day: 4, title: "Retro Bollywood Limousine Ride + Gold Souk & Meena Bazaar Shopping" },
+  //   { day: 5, title: "Transfer to Yas Island + Hotel Check-in + Full Day Park Access (Any 1 Park)" },
+  //   { day: 6, title: "Abu Dhabi City Tour + Grand Mosque + BAPS Temple + Ferrari World Photo Stop + Departure" }
+  // ],
   "dubai-abu-dhabi-yas-island": [
     { day: 1, title: "Arrival in UAE + 2-Hour Yacht Dinner" },
     { day: 2, title: "Dubai City Tour + Monorail + Burj Khalifa 124/125th Floor" },

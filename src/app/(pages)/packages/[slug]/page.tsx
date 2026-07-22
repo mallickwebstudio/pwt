@@ -22,6 +22,8 @@ import { inclusionsExclusionsData } from "@/lib/db/inclusionsExclusions";
 import Faq from "@/components/section/faq";
 import Cta from "@/components/section/cta";
 import WhyPwt from "@/components/section/why-pwt";
+import { JsonLd } from "@/components/other/json-ld";
+import { jsonLd } from "@/lib/metadata";
 
 
 interface PageProps {
@@ -33,16 +35,44 @@ export function generateStaticParams() {
   return TOUR_SLUGS.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
-  const data = packagesData.find((p) => p.slug === slug);
-  if (!data) return {};
 
-  const seo = seoData[slug as TourSlug];
+  const tour = packagesData.find((p) => p.slug === slug);
+
+  if (!tour) {
+    return {
+      title: "Package Not Found",
+    };
+  }
+
+  const heroImage = mediaData[tour.slug].find((img) => img.isHero);
 
   return {
-    title: seo?.metaTitle ?? data.title,
-    description: seo?.metaDescription ?? data.description,
+    title: seoData[tour.slug].metaTitle,
+    description: seoData[tour.slug].metaDescription,
+
+    alternates: {
+      canonical: `/packages/${tour.slug}`,
+    },
+
+    openGraph: {
+      title: seoData[tour.slug].metaTitle,
+      description: seoData[tour.slug].metaDescription,
+      url: `/packages/${tour.slug}`,
+      images: heroImage
+        ? [
+          {
+            url: heroImage.url,
+            alt: heroImage.altText,
+          },
+        ]
+        : ["/og.png"],
+    },
   };
 }
 
@@ -69,6 +99,23 @@ export default async function PackageDetailsPage({ params }: PageProps) {
 
   return (
     <>
+      <JsonLd
+        data={jsonLd.packageDetails(data)}
+        breadcrumb={[
+          {
+            name: "Home",
+            href: "/",
+          },
+          {
+            name: "Packages",
+            href: "/packages",
+          },
+          {
+            name: data.title,
+            href: `/packages/${data.slug}`,
+          },
+        ]}
+      />
       <PackageHero data={data} heroImage={heroImage} pricing={pricing} />
 
       {highlights && <PackageHighlights data={highlights} />}

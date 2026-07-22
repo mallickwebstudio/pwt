@@ -131,7 +131,7 @@ function CompanyDetails() {
                                 Monday – Saturday
                                 <br />
                                 <span className="font-medium text-foreground">
-                                    9:30 AM – 1:00 PM
+                                    10:00 AM – 08:00 PM
                                 </span>
                             </p>
                         </div>

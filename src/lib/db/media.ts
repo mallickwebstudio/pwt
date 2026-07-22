@@ -1,6 +1,23 @@
 import { MediaItem, TourSlug } from "@/types";
 
 export const mediaData: Record<TourSlug, MediaItem[]> = {
+  "dubai-classic-6d": [
+    {
+      url: "/images/packages/day/01.webp",
+      altText: "Dubai Skyline & Burj Khalifa",
+      isHero: true
+    },
+    {
+      url: "/images/packages/day/02.webp",
+      altText: "Dubai Skyline & Burj Khalifa",
+      isHero: false
+    },
+    {
+      url: "/images/packages/day/03.webp",
+      altText: "Dubai Skyline & Burj Khalifa",
+      isHero: false
+    },
+  ],
   "dubai-abu-dhabi-yas-island": [
     {
       url: "/images/packages/day/01.webp",
