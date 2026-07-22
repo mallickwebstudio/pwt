@@ -28,7 +28,7 @@ export default function Hero() {
                     />
 
                     <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-4">
-                        <Link className={cn(buttonVariants({ variant: "outline", size: "lg" }), "cursor-pointer")} href="/Services">
+                        <Link className={cn(buttonVariants({ variant: "outline", size: "lg" }), "cursor-pointer")} href="/services">
                             View Services
                         </Link>
                         <Link className={cn(buttonVariants({ size: "lg" }), "cursor-pointer")} href="/packages#packages">

@@ -244,7 +244,7 @@ export default function CategoryFilterTour() {
                         {appliedFilters.map((f) => (
                             <Badge
                                 key={f.id}
-                                className="hover:bg-red-500 hover:text-white cursor-pointer transition-all"
+                                className="bg-muted hover:bg-red-500 hover:text-white cursor-pointer transition-all"
                                 variant="outline"
                                 onClick={f.onRemove}
                             >

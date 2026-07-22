@@ -8,6 +8,7 @@ import { siteConfig } from "@/lib/metadata";
 import Contact from "@/components/section/contact";
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import OverscreenWhatsappButton from "@/components/other/overscreen-whatsapp-button";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -64,6 +65,7 @@ export default function RootLayout({
         </NuqsAdapter>
         <Contact />
         <Footer />
+        <Toaster />
       </body>
     </html>
   );
