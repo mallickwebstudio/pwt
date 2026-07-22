@@ -1,15 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  CalendarDays,
-  MapPin,
-  Tag,
-  IndianRupee,
-  CheckCircle2,
-  Check,
-  X,
-  type LucideIcon,
-} from "lucide-react";
+import { CheckCircle2, Check, X, } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
@@ -34,92 +25,30 @@ import {
 
 /**
  * ------------------------------------------------------------
- * Quick Facts strip — sits right below the hero
- * ------------------------------------------------------------
- */
-export function PackageQuickFacts({
-  data,
-  pricing,
-}: {
-  data: BasePackage;
-  pricing?: PackagePricingType;
-}) {
-  return (
-    <section className="border-b bg-background">
-      <div className="container mx-auto flex flex-wrap items-center justify-between gap-6 px-6 py-6 md:px-16">
-        <div className="flex flex-wrap items-center gap-8">
-          <QuickFact
-            icon={CalendarDays}
-            label="Duration"
-            value={`${data.duration.nights}N / ${data.duration.days}D`}
-          />
-          <QuickFact
-            icon={MapPin}
-            label="Destinations"
-            value={data.destinations.join(", ")}
-          />
-          <QuickFact icon={Tag} label="Category" value={data.category} />
-          {pricing && (
-            <QuickFact
-              icon={IndianRupee}
-              label="Starting From"
-              value={`₹${pricing.startingPrice.toLocaleString("en-IN")}`}
-            />
-          )}
-        </div>
-
-        <Link
-          href="#enquiry"
-          className={cn(buttonVariants({ variant: "default" }), "shrink-0")}
-        >
-          Enquire Now
-        </Link>
-      </div>
-    </section>
-  );
-}
-
-function QuickFact({
-  icon: Icon,
-  label,
-  value,
-}: {
-  icon: LucideIcon;
-  label: string;
-  value: string;
-}) {
-  return (
-    <div className="flex items-center gap-3">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary">
-        <Icon className="h-5 w-5" />
-      </div>
-      <div>
-        <div className="text-xs text-muted-foreground">{label}</div>
-        <div className="font-medium">{value}</div>
-      </div>
-    </div>
-  );
-}
-
-/**
- * ------------------------------------------------------------
  * Highlights + Activities
  * ------------------------------------------------------------
  */
 export function PackageHighlights({ data }: { data: HighlightsData }) {
   return (
-    <Section h2="Highlights" p="What makes this tour special">
-      <div className="mb-10 grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-2">
-        {data.highlights.map((item, i) => (
-          <div key={i} className="flex items-start gap-3">
-            <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-            <span>{item}</span>
-          </div>
-        ))}
-      </div>
+    <Section>
+      <header className={cn("grid grid-cols-1 lg:grid-cols-2 gap-8")}>
+        <div className={cn("max-w-2xl")}>
+          <h2 className="h2">Highlights</h2>
+          <p className="mt-3 md:mt-4 md:text-lg text-muted-foreground">What makes this tour special</p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-2">
+          {data.highlights.map((item, i) => (
+            <div key={i} className="flex items-start gap-3">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      </header>
 
       {data.activities.length > 0 && (
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {data.activities.map((activity, i) => (
             <div
               key={i}
@@ -334,7 +263,7 @@ export function PackageInclusionsExclusions({
       className="bg-secondary/30"
     >
       <div className="mt-8 grid gap-8 md:grid-cols-2">
-        <div>
+        <div className="p-4 rounded-4xl bg-green-50 border border-green-500 h-fit">
           <h3 className="mb-4 text-lg font-semibold">Inclusions</h3>
           <ul className="space-y-3">
             {data.inclusions.map((item, i) => (
@@ -345,7 +274,7 @@ export function PackageInclusionsExclusions({
             ))}
           </ul>
         </div>
-        <div>
+        <div className="p-4 rounded-4xl bg-red-50 border border-red-700 h-fit">
           <h3 className="mb-4 text-lg font-semibold">Exclusions</h3>
           <ul className="space-y-3">
             {data.exclusions.map((item, i) => (

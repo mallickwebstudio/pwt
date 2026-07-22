@@ -41,22 +41,22 @@ export default function Hero({
                     priority
                     fetchPriority="high"
                     sizes="100vw"
-                    src={imageSrc ?? "/images/common/01.jpeg"}
+                    src={imageSrc ?? "/images/common/banner.webp"}
                     alt={h1}
                     className="pointer-events-none select-none object-cover"
                 />
             </div>
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-radial from-transparent to-neutral-950" aria-hidden="true" />
+            <div className={cn("absolute inset-0", headerCenter ? "bg-radial from-transparent to-neutral-950":"bg-linear-to-r from-black to-transparent")} aria-hidden="true" />
 
             <div className={cn("relative container mx-auto px-6 py-12 md:px-16 md:py-16", wrapperClassName)}>
-                <header className={cn("text-white text-shadow-lg max-w-2xl", headerCenter && "mx-auto text-center", headerClassName)}>
+                <header className={cn("text-secondary text-shadow-lg max-w-2xl", headerCenter && "mx-auto text-center", headerClassName)}>
                     <div className={headingWrapperClassName}>
-                        <h1 className="h1">{h1}</h1>
+                        <h1 className="h1 text-shadow-lg">{h1}</h1>
 
                         {p && (
-                            <p className={cn("mt-4 text-white/90", headerCenter && "mx-auto max-w-xl")}>{p}</p>
+                            <p className={cn("mt-4 text-secondary/80 text-shadow-lg", headerCenter && "mx-auto max-w-xl")}>{p}</p>
                         )}
                     </div>
                 </header>

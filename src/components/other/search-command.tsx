@@ -43,7 +43,7 @@ export function SearchCommand({
                     readOnly
                     placeholder={placeholder}
                     onClick={() => setOpen(true)}
-                    className={cn("cursor-pointer", inputClassName)}
+                    className={cn("cursor-text", inputClassName)}
                 />
             </InputGroup>
 

@@ -8,7 +8,7 @@ export const TOUR_SLUGS = [
   "vietnam-signature-9d",
   "bali-exotic-escape",
   "phuket-krabi-escape",
-  
+
   // Domestic
   "goa-beach-bliss",
   "kerala-backwaters-munnar",
@@ -26,7 +26,7 @@ export interface BasePackage {
   title: string;
   description: string;
   status: "PUBLISHED" | "DRAFT";
-  category: "International" | "Domestic";
+  category: "International" | "Domestic" | "Family" | "Couple";
   isFeatured: boolean;
   flyerHref?: string;
   duration: { nights: number; days: number };
@@ -85,11 +85,17 @@ export interface SeoData {
 // 
 
 export type DepartureStatus = "AVAILABLE" | "FILLING_FAST" | "SOLD_OUT";
+type Year = `${number}${number}${number}${number}`;
+type Month = "01" | "02" | "03" | "04" | "05" | "06" | "07" | "08" | "09" | "10" | "11" | "12";
+type Day = "01" | "02" | "03" | "04" | "05" | "06" | "07" | "08" | "09" | "10" | "11" | "12" | "13" | "14" | "15"
+  | "16" | "17" | "18" | "19" | "20" | "21" | "22" | "23" | "24" | "25" | "26" | "27" | "28" | "29" | "30" | "31";
+
+export type ISODateString = `${Year}-${Month}-${Day}`;
 
 export interface TourDateInstance {
   id: string;
-  departureDate: string; // ISO 8601: YYYY-MM-DD
-  returnDate: string;    // ISO 8601: YYYY-MM-DD
+  departureDate: ISODateString;
+  returnDate: ISODateString;
   availableSeats: number;
   status: DepartureStatus;
 }
@@ -101,6 +107,24 @@ export interface PackageRouteMeta {
   dates: TourDateInstance[];
 }
 
+
+////////////////////////////////////////
+////////////////////////////////////////
+////////////////////////////////////////
+
+export type Destination = {
+  name: string;
+  image: string;
+  href: string;
+  packageCount: number;
+  startingPrice: number;
+};
+
+export type PackageCategory = {
+  name: string;
+  count: number;
+  image: string;
+};
 
 
 below are general overview of my datas located at "@/lib/db/..."
@@ -213,3 +237,6 @@ export const tourDatesData: Partial<Record<TourSlug, PackageRouteMeta>> = {
             { id: "sm-2026-09-16", departureDate: "2026-09-16", returnDate: "2026-09-22", availableSeats: 22, status: "AVAILABLE" }
         ]
     },
+
+Keep this data in mind,
+For now 

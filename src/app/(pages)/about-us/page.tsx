@@ -1,38 +1,34 @@
+import Cta from "@/components/section/cta";
+import Faq from "@/components/section/faq";
+import FeaturedDestinations from "@/components/section/featured-destinations";
+import Hero from "@/components/section/hero";
+import Team from "@/components/section/team";
+import WhyPwt from "@/components/section/why-pwt";
+import MissionVision from "./mission-vision";
+import FeaturedPackages from "@/components/section/featured-packages";
 
 export default function page() {
     return (
         <>
-            Hero
-
-            Company Introduction
-
-            Our Journey
-
-            Mission & Vision
-
-            Values
-
-            Why Choose Us
-
-            Numbers
-
-            Team
-
-            Services
-
-            Popular Destinations
-
-            Testimonials
-
-            Partners
-
-            Gallery
-
-            FAQ
-
-            Contact
-
-            CTA
+            <Hero
+                h1="Your Trusted Travel Partner for Every Journey"
+                p="At Patel World Tour, we believe travel is more than visiting new places—it's about creating unforgettable experiences. We provide complete travel solutions including domestic and international tour packages, visa assistance, flight ticket bookings, passport services, land packages, and customized travel planning. With a customer-first approach and attention to every detail, our team is committed to making every journey smooth, comfortable, and memorable."
+            />
+            {/* Company Introduction */}
+            {/* Our Journey */}
+            <MissionVision />
+            {/* Values */}
+            <WhyPwt />
+            {/* Numbers */}
+            <Team />
+            <FeaturedPackages />
+            {/* Services */}
+            {/* Testimonials */}
+            {/* Partners */}
+            {/* Gallery */}
+            <Faq />
+            <FeaturedDestinations />
+            <Cta />
         </>
     )
 }

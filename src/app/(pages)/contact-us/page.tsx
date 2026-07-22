@@ -1,6 +1,10 @@
+import Hero from "@/components/section/hero";
 
 export default function page() {
   return (
-    <div>page</div>
+    <Hero
+      headerCenter
+      h1="Contact Us"
+    />
   )
 }

@@ -6,10 +6,15 @@ import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BasePackage } from "@/types";
 import { pricingData } from "@/lib/db/pricing";
+import { mediaData } from "@/lib/db/media";
 
 export default function PackageCard({ data }: { data: BasePackage }) {
     // const heroImage = pkg.media.find((img) => img.isHero)?.url ?? pkg.media[0]?.url;
-    const heroImage = "/images/bg/02.jpeg";
+    // const heroImage = "/images/common/04.webp";
+
+    const imageData = mediaData[data.slug][0]
+    const heroImage = imageData.url;
+    const heroImageAlt = imageData.altText;
 
     return (
         <Link
@@ -19,9 +24,9 @@ export default function PackageCard({ data }: { data: BasePackage }) {
             <article className="relative block rounded-4xl border bg-card group overflow-hidden">
                 <div className="relative aspect-4/3 overflow-hidden">
                     <Image
-                        className="w-full object-cover transition duration-500 group-hover:scale-105 select-none pointer-events-none"
+                        className="size-full object-cover transition duration-500 group-hover:scale-105 select-none pointer-events-none"
                         src={heroImage}
-                        alt={data.title}
+                        alt={heroImageAlt}
                         width={400}
                         height={300}
                     />
@@ -37,7 +42,7 @@ export default function PackageCard({ data }: { data: BasePackage }) {
                 </div>
 
                 <header className="p-3">
-                    <h3 className="h5 h-14 text-primary line-clamp-2">
+                    <h3 className="h6 h-12 text-primary line-clamp-2">
                         {data.title}
                     </h3>
 
@@ -57,7 +62,7 @@ export default function PackageCard({ data }: { data: BasePackage }) {
                         </div>
 
                         <div className={buttonVariants({ variant: "outline", size: "sm" })}>
-                            View Details
+                            Details
                             <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
                         </div>
                     </div>

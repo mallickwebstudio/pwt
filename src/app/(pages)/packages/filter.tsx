@@ -238,14 +238,14 @@ export default function CategoryFilterTour() {
 
             {/* Results */}
             <div className="w-full">
-                <div className="sticky top-18 lg:top-16 h-fit py-2 mb-2 lg:-mt-4 bg-background flex flex-col lg:flex-row lg:justify-between lg:items-end gap-4 z-10 border-b">
+                <div className="sticky top-22 md:top-18 h-fit p-2 mb-2 bg-secondary flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4 rounded-full shadow-lg z-10">
                     {/* Applied Filter Badges */}
-                    <div className="flex gap-2 flex-wrap">
+                    <div className="hidden size-full h-full lg:flex items-center gap-2 flex-wrap">
                         {appliedFilters.map((f) => (
                             <Badge
                                 key={f.id}
                                 className="hover:bg-red-500 hover:text-white cursor-pointer transition-all"
-                                variant="secondary"
+                                variant="outline"
                                 onClick={f.onRemove}
                             >
                                 {f.label}
@@ -266,7 +266,7 @@ export default function CategoryFilterTour() {
                         </Button>
 
                         <DropdownMenu>
-                            <DropdownMenuTrigger className={cn(buttonVariants({ variant: "outline" }), "border cursor-pointer")}>
+                            <DropdownMenuTrigger className={cn(buttonVariants({ variant: "outline", size: "sm" }), "border cursor-pointer")}>
                                 {currentSortLabel}
                                 <ChevronDown />
                             </DropdownMenuTrigger>
@@ -293,25 +293,6 @@ export default function CategoryFilterTour() {
                     {filteredPackages.map((data) => (
                         <div key={data.slug}>
                             <PackageCard data={data} />
-
-                            {/* <div key={data.id} className="border rounded-lg p-4">
-                                <div className="font-semibold">{data.title}</div>
-                                <div className="text-sm text-muted-foreground line-clamp-2">
-                                    {data.description}
-                                </div>
-                                <div className="mt-2 text-sm">
-                                    {data.duration.nights}N / {data.duration.days}D ·{" "}
-                                    {data.destinations.join(", ")}
-                                </div>
-                                {pricingData[data.slug as keyof typeof pricingData] && (
-                                    <div className="mt-1 font-medium">
-                                        ₹
-                                        {pricingData[
-                                            data.slug as keyof typeof pricingData
-                                        ]!.startingPrice.toLocaleString("en-IN")}
-                                    </div>
-                                )}
-                            </div> */}
                         </div>
                     ))}
                 </main>
@@ -372,7 +353,7 @@ function FilterPanel({
                     multiple
                     value={openItems}
                     onValueChange={setOpenItems}
-                    className="relative lg:h-[70dvh] lg:overflow-y-scroll"
+                    className="relative lg:h-[70dvh] lg:overflow-y-scroll bg-secondary"
                 >
 
                     {/* Category */}
@@ -403,7 +384,7 @@ function FilterPanel({
                     </AccordionItem>
 
                     {/* Destination */}
-                    <AccordionItem value="destination">
+                    {/* <AccordionItem value="destination">
                         <AccordionTrigger className="cursor-pointer">Destination</AccordionTrigger>
                         <AccordionContent>
                             <RadioGroup
@@ -424,7 +405,7 @@ function FilterPanel({
                                 ))}
                             </RadioGroup>
                         </AccordionContent>
-                    </AccordionItem>
+                    </AccordionItem> */}
 
                     {/* Duration */}
                     <AccordionItem value="duration">

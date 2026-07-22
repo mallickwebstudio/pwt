@@ -3,7 +3,7 @@ import { packagesData } from "@/lib/db/packages";
 import CategoryCard from "@/components/card/category-card";
 import { PackageCategory } from "@/types";
 
-const categories: PackageCategory[] = [...new Set(packagesData.map((pkg) => pkg.category))].map(
+const mentionedCategories: PackageCategory[] = [...new Set(packagesData.map((pkg) => pkg.category))].map(
   (category, i): PackageCategory => ({
     name: category,
     count: packagesData.filter((pkg) => pkg.category === category).length,
@@ -12,7 +12,27 @@ const categories: PackageCategory[] = [...new Set(packagesData.map((pkg) => pkg.
     // )?.url ?? "/images/common/01.jpeg",
     image: `/images/common/0${i + 1}.webp`,
   })
-);
+)
+const categories: PackageCategory[] = [
+  ...mentionedCategories,
+  {
+    name: "Family",
+    count: 14,
+    image: "/images/common/03.webp",
+  },
+  {
+    name: "Couple",
+    count: 14,
+    image: "/images/common/04.webp",
+  },
+  {
+    name: "One Person",
+    count: 14,
+    image: "/images/common/05.webp",
+  },
+];
+
+
 export default function Category() {
   return (
     <Section

@@ -1,12 +1,11 @@
 "use client";
 
 import { useId, useMemo, useState, type ReactNode } from "react";
-import { toast } from "sonner";
 import { LoaderIcon, Check } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { packagesData } from "@/lib/db/packages";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -23,6 +22,8 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog";
+import { Textarea } from "../ui/textarea";
+import { handleFormSubmit } from "@/lib/contact";
 
 /**
  * ------------------------------------------------------------
@@ -31,16 +32,6 @@ import {
  * Replace the TODO entry IDs with the real ones from your form.
  * ------------------------------------------------------------
  */
-const GOOGLE_FORM_ACTION_URL =
-    "https://docs.google.com/forms/d/e/dfsa-rtuEwuNyMPxIEf7uFKatHRk7Wfw/formResponse";
-
-const FORM_ENTRY_IDS = {
-    name: "entry.626445614",
-    phone: "entry.1614402530",
-    package: "entry.XXXXXXXXX", // TODO: replace with real entry id
-    month: "entry.XXXXXXXXX", // TODO: replace with real entry id
-    travellers: "entry.XXXXXXXXX", // TODO: replace with real entry id
-};
 
 const TRAVELLER_OPTIONS = ["2 Adults", "Family", "Group", "Solo"];
 
@@ -64,6 +55,7 @@ const emptyForm = {
     package: "",
     month: "",
     travellers: "",
+    message: "",
 };
 
 interface LeadDialogProps {
@@ -72,6 +64,8 @@ interface LeadDialogProps {
     /** Label used only for the default trigger button (ignored if `trigger` is passed). */
     triggerLabel?: string;
     /** Pre-select a package, e.g. pass `pkg.slug` from a package details page. */
+    ctaLabel?: string;
+    triggerClassName?: string;
     defaultPackageSlug?: string;
     className?: string;
 }
@@ -80,7 +74,9 @@ export default function LeadDialog({
     trigger,
     triggerLabel = "Get Free Quote",
     defaultPackageSlug,
+    triggerClassName,
     className,
+    ctaLabel,
 }: LeadDialogProps) {
     const uid = useId();
     const [open, setOpen] = useState(false);
@@ -100,34 +96,30 @@ export default function LeadDialog({
         setFormData({ ...emptyForm, package: defaultPackageSlug ?? "" });
     }
 
+
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
+
         if (isSubmitting) return;
 
         setIsSubmitting(true);
 
-        const body = new FormData();
-        body.append(FORM_ENTRY_IDS.name, formData.name);
-        body.append(FORM_ENTRY_IDS.phone, formData.phone);
-        body.append(FORM_ENTRY_IDS.package, formData.package);
-        body.append(FORM_ENTRY_IDS.month, formData.month);
-        body.append(FORM_ENTRY_IDS.travellers, formData.travellers);
+        const success = await handleFormSubmit({
+            name: formData.name,
+            phone: formData.phone,
+            package: formData.package,
+            month: formData.month,
+            traveller: formData.travellers,
+            message: formData.message,
+            type: "Lead",
+        });
 
-        try {
-            await fetch(GOOGLE_FORM_ACTION_URL, {
-                method: "POST",
-                mode: "no-cors",
-                body,
-            });
-            toast.success("Thanks! Our team will call you back shortly.");
+        if (success) {
             resetForm();
             setOpen(false);
-        } catch (error) {
-            console.error("Lead submission error:", error);
-            toast.error("Failed to submit. Please try again.");
-        } finally {
-            setIsSubmitting(false);
         }
+
+        setIsSubmitting(false);
     }
 
     return (
@@ -138,8 +130,12 @@ export default function LeadDialog({
                 if (!next) resetForm();
             }}
         >
-            <DialogTrigger>
-                {trigger ?? <Button className="cursor-pointer">{triggerLabel}</Button>}
+            <DialogTrigger className={triggerClassName}>
+                {trigger ?? (
+                    <span className={cn(buttonVariants(), "cursor-pointer", triggerClassName)}>
+                        {triggerLabel}
+                    </span>
+                )}
             </DialogTrigger>
 
             <DialogContent className={cn("sm:max-w-md", className)}>
@@ -162,33 +158,36 @@ export default function LeadDialog({
                 </ul>
 
                 <form onSubmit={handleSubmit} className="space-y-3">
-                    <div>
-                        <Label htmlFor={`${uid}-name`}>
-                            Name <span className="text-red-500">*</span>
-                        </Label>
-                        <Input
-                            id={`${uid}-name`}
-                            className="mt-1"
-                            placeholder="Vikas Sharma"
-                            required
-                            value={formData.name}
-                            onChange={(e) => updateField("name", e.target.value)}
-                        />
-                    </div>
 
-                    <div>
-                        <Label htmlFor={`${uid}-phone`}>
-                            Phone Number <span className="text-red-500">*</span>
-                        </Label>
-                        <Input
-                            id={`${uid}-phone`}
-                            className="mt-1"
-                            type="tel"
-                            placeholder="+91 00000 00000"
-                            required
-                            value={formData.phone}
-                            onChange={(e) => updateField("phone", e.target.value)}
-                        />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <Label htmlFor={`${uid}-name`}>
+                                Name <span className="text-red-500">*</span>
+                            </Label>
+                            <Input
+                                id={`${uid}-name`}
+                                className="mt-1"
+                                placeholder="Vikas Sharma"
+                                required
+                                value={formData.name}
+                                onChange={(e) => updateField("name", e.target.value)}
+                            />
+                        </div>
+
+                        <div>
+                            <Label htmlFor={`${uid}-phone`}>
+                                Phone Number <span className="text-red-500">*</span>
+                            </Label>
+                            <Input
+                                id={`${uid}-phone`}
+                                className="mt-1"
+                                type="tel"
+                                placeholder="+91 00000 00000"
+                                required
+                                value={formData.phone}
+                                onChange={(e) => updateField("phone", e.target.value)}
+                            />
+                        </div>
                     </div>
 
                     <div>
@@ -262,9 +261,24 @@ export default function LeadDialog({
                         </div>
                     </div>
 
+
+                    <div>
+                        <label className="block text-sm font-medium" htmlFor={`${uid}-message`}>
+                            Message
+                        </label>
+                        <Textarea
+                            id={`${uid}-message`}
+                            className="mt-0.5 border-black/20 resize-none"
+                            name="message"
+                            placeholder={"Type your message here..."}
+                            value={formData.message}
+                            onChange={(e) => updateField("message", e.target.value)}
+                        />
+                    </div>
+
                     <Button type="submit" className="w-full cursor-pointer" disabled={isSubmitting}>
                         <LoaderIcon className={cn("animate-spin", isSubmitting ? "block" : "hidden")} />
-                        {isSubmitting ? "Submitting..." : "Get Free Quote"}
+                        {isSubmitting ? "Submitting..." : (ctaLabel || "Get Free Quote")}
                     </Button>
 
                     <p className="text-center text-xs text-muted-foreground">

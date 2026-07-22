@@ -1,45 +1,36 @@
 import React from 'react'
-// import TrustBanner from './trust-banner'
-import Destination from './destination'
-import Package from './package'
-import WhyUs from './why-us'
-import Category from './category'
-import Offer from './offer'
-import BookingSteps from './booking-steps'
-// import Testimonials from './testimonials'
-// import Gallery from './gallery'
+import FeaturedDestinations from '@/components/section/featured-destinations'
+import FeaturedPackages from '@/components/section/featured-packages'
+import WhyPwt from '@/components/section/why-pwt'
+// import Category from './category'
+// import Offer from './offer'
+import BookingSteps from '../../../components/section/booking-steps'
 import Activities from './activities'
-// import DestinationListMap from './destination-list-map'
 import Upcoming from './upcoming'
-import Team from './team'
-import Faq from './faq'
-// import Partntrs from './partntrs'
-// import Ig from './ig'
-// import CtaBanner from './cta-banner'
+import Team from '../../../components/section/team'
+import Faq from '../../../components/section/faq'
 import Hero from './hero'
+import Cta from '@/components/section/cta'
 
 export default function page() {
     return (
         <>
             <Hero />
-            {/* <TrustBanner /> */}
-            {/* <Partntrs /> */}
-            <Destination />
-            <Package />
+            {/* <Partntrs /> marquee*/}
+            <FeaturedDestinations />
+            <FeaturedPackages />
             <Upcoming />
-            <WhyUs />
-            <Category />
-            <Offer />
+            <WhyPwt />
+            {/* <Category /> */}
+            {/* <Offer /> */}
             <BookingSteps />
-            {/* <Testimonials /> */}
-            {/* <Gallery /> */}
-            <Activities />
-            {/* <DestinationListMap /> */}
-            <Team />
+            {/* <Testimonials /> Later*/}
+            {/* <Gallery /> Later*/}
+            {/* <Activities /> */}
             <Faq />
-            {/* <Partntrs /> */}
+            <Team />
             {/* <Ig /> */}
-            {/* <CtaBanner /> */}
+            <Cta />
         </>
     )
 }

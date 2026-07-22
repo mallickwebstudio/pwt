@@ -6,11 +6,17 @@ import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BasePackage } from "@/types";
 import { pricingData } from "@/lib/db/pricing";
+import { mediaData } from "@/lib/db/media";
 
 export default function PackageCardHorizontal({ data }: { data: BasePackage }) {
     // Pass dynamic image or fall back to default
     //   const heroImage = data.media?.find((img) => img.isHero)?.url ?? data.media?.[0]?.url ?? "/images/bg/02.jpeg";
-    const heroImage = "/images/bg/02.jpeg";
+    // const heroImage = "/images/bg/02.jpeg";
+
+    const imageData = mediaData[data.slug][0]
+    const heroImage = imageData.url;
+    const heroImageAlt = imageData.altText;
+
     const price = pricingData[data.slug]?.startingPrice;
 
     return (
@@ -20,9 +26,9 @@ export default function PackageCardHorizontal({ data }: { data: BasePackage }) {
                 {/* Media Container */}
                 <div className="relative w-full sm:w-2/5 aspect-4/3 sm:aspect-auto shrink-0 overflow-hidden">
                     <Image
-                        className="w-full h-full object-cover transition duration-500 group-hover:scale-105 select-none pointer-events-none"
+                        className="size-full object-cover transition duration-500 group-hover:scale-105 select-none pointer-events-none"
                         src={heroImage}
-                        alt={data.title}
+                        alt={heroImageAlt}
                         fill
                         sizes="(max-width: 640px) 100vw, 40vw"
                     />

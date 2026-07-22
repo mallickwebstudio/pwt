@@ -1,11 +1,11 @@
 import Hero from "@/components/section/hero";
-import WhyUs from "../(home)/why-us";
+import WhyUs from "@/components/section/why-pwt";
 import Category from "../(home)/category";
-import Package from "../(home)/package";
-import BookingSteps from "../(home)/booking-steps";
-import FaqThree from "../(home)/faq";
+import BookingSteps from "../../../components/section/booking-steps";
+import FaqThree from "../../../components/section/faq";
 import FilterSection from "./filter-section";
 import { Suspense } from "react";
+import FeaturedPackages from '@/components/section/featured-packages'
 
 export default function page() {
   return (
@@ -16,8 +16,8 @@ export default function page() {
       <Suspense fallback={<>Loading</>}>
         <FilterSection />
       </Suspense>
-      <Package />
-      <Category />
+      <FeaturedPackages />
+      {/* <Category /> */}
       <WhyUs />
       <BookingSteps />
       <FaqThree />

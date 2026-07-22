@@ -1,40 +1,86 @@
 import Link from "next/link";
-import { CalendarDays, MapPin, Tag } from "lucide-react";
+import { CalendarDays, IndianRupee, MapPin, Tag } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import Hero from "@/components/section/hero";
-import { BasePackage, MediaItem } from "@/types";
+import { BasePackage, PackagePricing } from "@/types";
 import LeadDialog from "@/components/other/lead-dialog";
 
 export default function PackageHero({
     data,
+    heroImage,
+    pricing
 }: {
     data: BasePackage;
-    heroImage?: MediaItem;
+    heroImage: string;
+    pricing?: PackagePricing;
 }) {
     return (
-        <Hero h1={data.title} p={data.description} imageSrc={"/images/common/01.jpeg"}>
-            <div className="flex items-center gap-2">
-                <Badge variant="secondary" className="gap-1.5 px-3 py-1.5 text-sm">
-                    <CalendarDays className="h-4 w-4" />
-                    {data.duration.nights}N / {data.duration.days}D
-                </Badge>
-                <Badge variant="secondary" className="gap-1.5 px-3 py-1.5 text-sm">
-                    <MapPin className="h-4 w-4" />
-                    {data.destinations.join(", ")}
-                </Badge>
-                <Badge variant="secondary" className="gap-1.5 px-3 py-1.5 text-sm">
-                    <Tag className="h-4 w-4" />
-                    {data.category}
-                </Badge>
+        <Hero h1={data.title} p={data.description} imageSrc={heroImage}>
+            <div className="mt-6 grid grid-cols-2 gap-4 max-w-2xl">
+                <div className="py-2 px-4 flex items-center gap-3 bg-secondary rounded-2xl">
+                    <div className="flex items-center justify-center rounded-full bg-secondary shrink-0">
+                        <Tag className="size-5" />
+                    </div>
+                    <div>
+                        <div className="text-xs text-muted-foreground font-mono">
+                            Category
+                        </div>
+                        <div className="font-medium text-sm md:text-base">{data.category}</div>
+                    </div>
+                </div>
+
+                <div className="py-2 px-4 flex items-center gap-3 bg-secondary rounded-2xl">
+                    <div className="flex items-center justify-center rounded-full bg-secondary shrink-0">
+                        <CalendarDays className="size-5" />
+                    </div>
+                    <div>
+                        <div className="text-xs text-muted-foreground font-mono">
+                            Duration
+                        </div>
+                        <div className="font-medium text-sm md:text-base">
+                            {data.duration.nights}N / {data.duration.days}D
+                        </div>
+                    </div>
+                </div>
+
+                <div className="py-2 px-4 bg-secondary rounded-2xl col-span-2 md:col-span-1">
+                    <div className="flex items-center gap-3">
+                        <div className="flex items-center justify-center rounded-full bg-secondary shrink-0">
+                            <MapPin className="size-5" />
+                        </div>
+                        <div className="text-xs text-muted-foreground font-mono">
+                            Destinations
+                        </div>
+                    </div>
+                    <div className="mt-1 font-medium text-sm md:text-base">
+                        {data.destinations.join(", ")}
+                    </div>
+                </div>
+
+                {pricing && (
+                    <div className="py-2 px-4 flex items-center gap-3 bg-secondary rounded-2xl">
+                        <div className="flex items-center justify-center rounded-full bg-secondary shrink-0">
+                            <IndianRupee className="size-5" />
+                        </div>
+                        <div>
+                            <div className="text-xs text-muted-foreground font-mono">
+                                Starting From
+                            </div>
+                            <div className="font-medium md:text-lg font-heading text-tone-yellow">
+                                ₹{pricing.startingPrice.toLocaleString("en-IN")}
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
 
-            <div className="mt-6 w-fit flex items-center justify-center flex-wrap">
+            <div className="mt-6 w-fit flex items-center justify-center flex-wrap gap-4">
                 <LeadDialog
-                    trigger={<Button size="lg">Get a Quote</Button>}
+                    trigger={<Button size="lg">Request Booking</Button>}
                     defaultPackageSlug={data.slug}
+                    ctaLabel="Request Booking"
                 />
 
                 {data.flyerHref && (

@@ -22,6 +22,17 @@ export default function Contact() {
                         <h3 className="h4">Contact Form</h3>
                         <EnquiryForm className="mt-2" />
                     </div>
+                    {/* <div className="mt-6 p-4 bg-card rounded-4xl border">
+                        <h3 className="h4 font-bold text-foreground">
+                            Office Hours
+                        </h3>
+                        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                            We are available to assist you during our working hours,{" "}
+                            <strong className="font-semibold text-foreground">Monday to Saturday</strong>,{" "}
+                            from <strong className="font-semibold text-foreground">10:00 AM to 8:00 PM</strong>.
+                            Feel free to contact or visit us during this time, and we&quot;ll be happy to help.
+                        </p>
+                    </div> */}
                 </div>
 
                 {/* Right Column: Visual Map Context */}

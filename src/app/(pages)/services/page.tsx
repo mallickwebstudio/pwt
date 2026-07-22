@@ -1,12 +1,20 @@
+import WhyPwt from "@/components/section/why-pwt";
+import Faq from "@/components/section/faq";
+import Cta from "@/components/section/cta";
+import BookingSteps from "@/components/section/booking-steps";
+import { ServiceOverview } from "./service-overview";
+import Hero from "@/components/section/hero";
 
 export default function page() {
     return (
         <>
-            Hero
-
-            Services Overview
-
-            Tour Packages
+            <Hero
+                headerCenter
+                h1="Services"
+                p="Besides tours and travels we provide below custom services"
+            />
+            <ServiceOverview />
+            {/* Tour Packages
 
             Visa Assistance
 
@@ -18,17 +26,11 @@ export default function page() {
 
             Passport Services
 
-            Expert Travel Support
-
-            Our Process
-
-            Why Choose Us
-
-            FAQs
-
-            Contact
-
-            CTA
+            Expert Travel Support */}
+            <WhyPwt />
+            <Faq />
+            <BookingSteps />
+            <Cta />
         </>
     )
 }

@@ -4,7 +4,7 @@ import Filter from './filter'
 export default function FilterSection() {
     return (
         <>
-            <section className="relative bg-background">
+            <section id='packages' className="relative bg-background">
                 <div className="mx-auto container px-6 py-12 md:p-16 lg:py-20">
                     <header className='max-w-2xl'>
                         <h2 className="h3">

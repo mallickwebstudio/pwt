@@ -44,6 +44,7 @@ export default function OverscreenWhatsappButton() {
             href={siteConfig.links.whatsapp}
         >
             <MessageCircle className="size-4" />
+            {/* <RiWhatsappLine /> */}
             Ask on Whatsapp
         </Link>
     )

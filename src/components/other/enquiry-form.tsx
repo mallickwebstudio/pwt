@@ -1,17 +1,18 @@
 "use client"
 
-import { toast } from "sonner"
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { LoaderIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { handleFormSubmit } from "@/lib/contact"
 
 export default function EnquiryForm({ className }: { className?: string }) {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false)
     const [formData, setFormData] = useState({
+        type: "Contact",
         name: "",
         phone: "",
         message: ""
@@ -22,37 +23,31 @@ export default function EnquiryForm({ className }: { className?: string }) {
         setFormData({ ...formData, [name]: value })
     }
 
-    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-        e.preventDefault()
-        setIsSubmitting(true)
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
 
-        try {
-            const data = new FormData()
-            data.append("entry.626445614", formData.name)
-            data.append("entry.1614402530", formData.phone)
-            data.append("entry.1454671805", formData.message)
+        if (isSubmitting) return;
 
-            fetch("https://docs.google.com/forms/d/e/dfsa-rtuEwuNyMPxIEf7uFKatHRk7Wfw/formResponse", {
-                method: "POST",
-                mode: "no-cors",
-                body: data
-            })
-                .then(() => {
-                    toast.success("Form submitted successfully!")
-                    setIsSubmitted(true)
-                })
-                .catch((error) => {
-                    console.error("Submission error:", error)
-                    toast.error("Failed to submit the form. Please try again.")
-                })
-                .finally(() => {
-                    setIsSubmitting(false)
-                })
-        } catch (error) {
-            console.error("Submission error:", error)
-            toast.error("Failed to submit the form. Please try again.")
-            setIsSubmitting(false)
+        setIsSubmitting(true);
+
+        const success = await handleFormSubmit({
+            name: formData.name,
+            phone: formData.phone,
+            message: formData.message,
+            type: "Contact", // optional, defaults to Contact
+        });
+
+        if (success) {
+            setIsSubmitted(true);
+            setFormData({
+                type: "Contact",
+                name: "",
+                phone: "",
+                message: "",
+            });
         }
+
+        setIsSubmitting(false);
     }
 
     return (

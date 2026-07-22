@@ -26,21 +26,36 @@
     -> Packages Page (with filtering)
     -> Fix destinitions
     -> Implement Google form to all the forms
-
-# TODO TODAY
-    -> Complete Home page, all section turn by turn
-    -> Upcoming Packages
-    -> Partner/Authority section
-    -> Ig Section
+        -> Upcoming Packages
     -> Complete About us page, all section turn by turn
-    -> Complete products us page, all section turn by turn
-    -> Complete products-details us page, all section turn by turn
-    -> Complete Services page, all section turn by turn
-    -> Complete Contcct us page, all section turn by turn
     -> Complete Privacy Policy page, all section turn by turn
     -> Complete Terms of service page, all section turn by turn
+    -> Complete Contact us page, all section turn by turn
+    -> Update Footer
 
-## About us page
+# TODO TODAY
+    -> Complete About us page, all section turn by turn
+    
+    -> Complete products-details page, all section turn by turn
+    -> Complete Services page, all section turn by turn
+    -> Fix Home Hero animation
+    -> Add home search function
+    -> Update SEO
+        -> favicon
+        -> Metadata
+        -> sitemap
+        -> robot.txt
+        -> llms (Later)
+        -> OG
+    -> Add Basic animations to the site
+    -> Images for activities Section for home page
+
+# TODO LATER
+    -> Complete Home page, all section turn by turn
+        -> Partner/Authority section
+        -> Ig Section
+        -> Generate all images
+
 
 ## Packages Details page
 Hero

@@ -16,11 +16,12 @@ import {
   PackageHotels,
   PackagePricing,
   PackageInclusionsExclusions,
-  // PackageEnquiry,
-  PackageQuickFacts,
   PackageHighlights,
 } from "./package-section";
 import { inclusionsExclusionsData } from "@/lib/db/inclusionsExclusions";
+import Faq from "@/components/section/faq";
+import Cta from "@/components/section/cta";
+import WhyPwt from "@/components/section/why-pwt";
 
 
 interface PageProps {
@@ -60,13 +61,15 @@ export default async function PackageDetailsPage({ params }: PageProps) {
   const inclusionsExclusions = inclusionsExclusionsData[tourSlug];
   const itinerary = itinerariesData[tourSlug];
 
-  const heroImage = media.find((m) => m.isHero) ?? media[0];
+  // const heroImage = media.find((m) => m.isHero) ?? media[0];
+
+  const imageData = mediaData[data.slug][0]
+  const heroImage = imageData.url;
+  // const heroImageAlt = imageData.altText;
 
   return (
     <>
-      <PackageHero data={data} heroImage={heroImage} />
-
-      <PackageQuickFacts data={data} pricing={pricing} />
+      <PackageHero data={data} heroImage={heroImage} pricing={pricing} />
 
       {highlights && <PackageHighlights data={highlights} />}
 
@@ -82,14 +85,12 @@ export default async function PackageDetailsPage({ params }: PageProps) {
         <PackageInclusionsExclusions data={inclusionsExclusions} />
       )}
 
-      Why Book With Us <br />
-      Reviews / Testimonials <br />
-      Important Notes <br />
-      FAQs <br />
-      Related Packages <br />
-      Sticky Enquiry CTA <br />
-
-
+      <WhyPwt />
+      {/* Reviews / Testimonials <br /> */}
+      {/* Important Notes <br /> */}
+      <Faq />
+      {/* Related Packages <br /> */}
+      <Cta />
       {/* <PackageEnquiry data={data} /> */}
     </>
   );
