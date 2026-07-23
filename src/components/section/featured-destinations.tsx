@@ -4,6 +4,7 @@ import DestinationCard from "@/components/card/destination-card";
 import { Destination as TypeDestination } from "@/types";
 import { pricingData } from "@/lib/db/pricing";
 import { mediaData } from "@/lib/db/media";
+import { ZoomInUp } from "../animation/zoom-in-up";
 
 const destinations = Object.values(
   packagesData.reduce<Record<string, TypeDestination>>((acc, pkg) => {
@@ -48,9 +49,11 @@ export default function FeaturedDestinations() {
     >
       {/* Service Cards */}
       <ul className="mt-10 grid gap-2 md:gap-6 grid-cols-2 md:grid-cols-4 list-none">
-        {destinations.map((data) => (
-          <li key={data.name + "HomeDestination"}>
-            <DestinationCard data={data} />
+        {destinations.map((data, i) => (
+          <li key={data.name + i + "HomeDestination"}>
+            <ZoomInUp delayOffset={i * 0.1}>
+              <DestinationCard data={data} />
+            </ZoomInUp>
           </li>
         ))}
       </ul>

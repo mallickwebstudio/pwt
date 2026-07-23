@@ -74,17 +74,20 @@ export default function Navbar() {
                 <NavbarCtaAction className="hidden lg:flex items-center gap-2 justify-self-end" />
 
                 {/* Mobile Menu Toggle */}
-                <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={toggleMobileMenu}
-                    className="lg:hidden cursor-pointer justify-self-end"
-                    aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-                    aria-expanded={isMobileMenuOpen}
-                >
-                    {isMobileMenuOpen ? <X /> : <Menu />}
-                    <span className="sr-only">Toggle Menu</span>
-                </Button>
+                <div className="flex lg:hidden items-center gap-2">
+                    <CtaButton />
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        onClick={toggleMobileMenu}
+                        className="cursor-pointer justify-self-end"
+                        aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                        aria-expanded={isMobileMenuOpen}
+                    >
+                        {isMobileMenuOpen ? <X /> : <Menu />}
+                        <span className="sr-only">Toggle Menu</span>
+                    </Button>
+                </div>
             </div>
 
             {/* Mobile Menu */}
@@ -94,7 +97,7 @@ export default function Navbar() {
                         <NavbarNavigationLinks />
 
                         {/* Mobile Actions */}
-                        <NavbarCtaAction className="flex flex-col gap-2" />
+                        <NavbarCtaAction className="hidden lg:flex flex-col gap-2" />
                     </nav>
                 </>
             )}

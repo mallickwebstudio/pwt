@@ -4,7 +4,7 @@ import { Destination } from '@/types'
 
 export default function DestinationCard({ data }: { data: Destination }) {
     return (
-        <Link className="block relative w-full aspect-2/1 rounded-4xl border group overflow-hidden hover:shadow-2xl" href={data.href}>
+        <Link className="block relative w-full aspect-video  sm:aspect-2/1 rounded-4xl border group overflow-hidden hover:shadow-2xl" href={data.href}>
             <article className='relative p-1 size-full'>
                 <div className="absolute inset-0 object-cover overflow-hidden select-none pointer-events-none z-0">
                     <Image
@@ -15,9 +15,9 @@ export default function DestinationCard({ data }: { data: Destination }) {
                         unoptimized
                     />
                 </div>
-                <div className="absolute inset-0 bg-neutral-950/40" />
+                <div className="absolute inset-0 bg-linear-to-t from-black" />
 
-                <div className="relative p-2 size-full rounded-3xl z-10 flex items-center justify-center text-center">
+                <div className="relative p-2 size-full flex items-end justify-center text-center">
                     <header>
                         <h3 className="text-sm font-heading text-secondary">{data.name}</h3>
 

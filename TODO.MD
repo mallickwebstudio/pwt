@@ -48,12 +48,21 @@
         -> Activities
 
 # TODO TODAY
-    -> Remove text from official given Images by ankush
     -> Images for 
         -> Services
+        -> Hero home horizontal version of posters
+    -> 15 seconds Lead popup
+    -> Fix upcoming date generation based on latest dates.
     -> Fix Home Hero animation
     -> Complete products-details page, all section turn by turn
     -> Add Basic animations to the site
+
+# FOCUS TODO
+-> Overwiew pending work on website.
+-> Record Audios
+-> Generate Audio with prompt by different voice
+-> Screen record and Edit scenerios
+-> Download sfx for necessary content
 
 # TODO LATER
     -> Complete Home page, all section turn by turn

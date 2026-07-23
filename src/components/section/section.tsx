@@ -3,6 +3,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { TextBlurFadeIn } from "../animation/text-blur-fade-in";
 
 interface CarouselSectionProps {
     h2?: string;
@@ -39,7 +40,16 @@ export default function Section({
                 {showHeader && (
                     <header className={cn("flex items-end justify-between gap-6", headerClassName)}>
                         <div className={cn("max-w-2xl", headerCenter && "mx-auto text-center", headingWrapperClassName)}>
-                            <h2 className="h2">{h2}</h2>
+                            <TextBlurFadeIn
+                                as="h2"
+                                className="h2"
+                                text={h2}
+                                duration={0.4}
+                                delayOffset={0.1}
+                                yOffset={12}
+                                blurAmount={6}
+                            />
+
                             {p && (
                                 <p className="mt-3 md:mt-4 md:text-lg text-muted-foreground">{p}</p>
                             )}

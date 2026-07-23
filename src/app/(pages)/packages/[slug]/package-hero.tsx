@@ -6,6 +6,8 @@ import { buttonVariants } from "@/components/ui/button";
 import Hero from "@/components/section/hero";
 import { BasePackage, PackagePricing } from "@/types";
 import LeadDialog from "@/components/other/lead-dialog";
+import { tourDatesData } from "@/lib/db/tour-dates";
+import { formatDate } from "@/lib/format";
 
 export default function PackageHero({
     data,
@@ -16,6 +18,9 @@ export default function PackageHero({
     heroImage: string;
     pricing?: PackagePricing;
 }) {
+    const nextDeparture = tourDatesData?.[data.slug]?.dates?.[2]?.departureDate;
+
+
     return (
         <Hero h1={data.title} p={data.description} imageSrc={heroImage}>
             <div className="mt-6 grid grid-cols-2 gap-4 max-w-2xl">
@@ -45,7 +50,7 @@ export default function PackageHero({
                     </div>
                 </div>
 
-                <div className="py-2 px-4 bg-secondary rounded-2xl col-span-2 md:col-span-1">
+                <div className="py-2 px-4 bg-secondary rounded-2xl col-span-2">
                     <div className="flex items-center gap-3">
                         <div className="flex items-center justify-center rounded-full bg-secondary shrink-0">
                             <MapPin className="size-5" />
@@ -58,6 +63,22 @@ export default function PackageHero({
                         {data.destinations.join(", ")}
                     </div>
                 </div>
+
+                {nextDeparture && (
+                    <div className="py-2 px-4 bg-secondary rounded-2xl">
+                        <div className="flex items-center gap-3">
+                            <div className="flex items-center justify-center rounded-full bg-secondary shrink-0">
+                                <MapPin className="size-5" />
+                            </div>
+                            <div className="text-xs text-muted-foreground font-mono">
+                                Next Departure Date
+                            </div>
+                        </div>
+                        <div className="mt-1 font-medium text-sm md:text-base">
+                            {formatDate(nextDeparture)}
+                        </div>
+                    </div>)
+                }
 
                 {pricing && (
                     <div className="py-2 px-4 flex items-center gap-3 bg-secondary rounded-2xl">

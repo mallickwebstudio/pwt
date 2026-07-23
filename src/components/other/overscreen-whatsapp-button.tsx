@@ -39,7 +39,7 @@ export default function OverscreenWhatsappButton() {
             className={cn(
                 buttonVariants(),
                 'fixed right-4 bottom-12 z-50 animate-bounce border shadow-lg',
-                'var-whatsapp',
+                'var-whatsapp bg-green-500! border',
             )}
             href={siteConfig.links.whatsapp}
         >

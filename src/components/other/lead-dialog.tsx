@@ -1,8 +1,6 @@
 "use client";
 
-import { useId, useMemo, useState, type ReactNode } from "react";
-import { LoaderIcon, ChevronsRight } from "lucide-react";
-
+import { useEffect, useId, useMemo, useState, type ReactNode } from "react"; import { LoaderIcon, Astroid } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { packagesData } from "@/lib/db/packages";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -26,6 +24,7 @@ import { Textarea } from "../ui/textarea";
 import { handleFormSubmit } from "@/lib/contact";
 import { Marquee } from "./marquee";
 
+const LEAD_DIALOG_VISITED_KEY = "lead-dialog-opened";
 /**
  * ------------------------------------------------------------
  * Google Form config — centralized here so every page that
@@ -97,7 +96,6 @@ export default function LeadDialog({
         setFormData({ ...emptyForm, package: defaultPackageSlug ?? "" });
     }
 
-
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
@@ -123,12 +121,25 @@ export default function LeadDialog({
         setIsSubmitting(false);
     }
 
+    useEffect(() => {
+        // Already opened before
+        if (localStorage.getItem(LEAD_DIALOG_VISITED_KEY)) return;
+
+        const timer = setTimeout(() => {
+            localStorage.setItem(LEAD_DIALOG_VISITED_KEY, "true");
+            setOpen(true);
+        }, 15000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <Dialog
             open={open}
             onOpenChange={(next) => {
+                if (next) { localStorage.setItem(LEAD_DIALOG_VISITED_KEY, "true") }
                 setOpen(next);
-                if (!next) resetForm();
+                if (!next) { resetForm() }
             }}
         >
             <DialogTrigger className={triggerClassName}>
@@ -149,16 +160,13 @@ export default function LeadDialog({
                     </DialogTitle>
                 </DialogHeader>
 
-                <Marquee reverse pauseOnHover className="-mt-4 -mb-2 [--duration:20s]">
+                <Marquee pauseOnHover className="-mt-4 -mb-2 [--duration:20s] hover:shadow-sm transition-all">
                     {TRUST_POINTS.map((point) => (
-                        <div key={point} className="flex items-start gap-1.5 text-xs">
-                            <ChevronsRight className="mt-px size-3.5 shrink-0 text-primary" />
-                            {point}
+                        <div key={point} className="flex items-start gap-4.5 text-xs uppercase">
+                            <Astroid className="size-3.5 shrink-0 text-primary fill-primary" />
+                            <span className="text-tone-yellow">{point}</span>
                         </div>
                     ))}
-                    {/* {firstRow.map((review) => (
-                        <ReviewCard key={review.username} {...review} />
-                    ))} */}
                 </Marquee>
 
                 <form onSubmit={handleSubmit} className="space-y-3">
@@ -208,7 +216,7 @@ export default function LeadDialog({
                             </SelectTrigger>
                             <SelectContent>
                                 {packagesData.map((pkg) => (
-                                    <SelectItem key={pkg.slug} value={pkg.slug}>
+                                    <SelectItem key={pkg.slug} value={pkg.title}>
                                         {pkg.title}
                                     </SelectItem>
                                 ))}

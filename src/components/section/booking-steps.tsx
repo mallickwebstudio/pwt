@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { ArrowRight, BadgeCheck, Map, Phone } from "lucide-react";
 import Image from "next/image";
 import LeadDialog from "../other/lead-dialog";
+import { FadeInUp } from "../animation/fade-in-up";
 
 export const bookingSteps = [
   {
@@ -76,34 +77,36 @@ export default function BookingSteps() {
               key={data.step}
               className={cn(index === 1 && "lg:mt-20", index === 2 && "lg:mt-40")}
             >
-              <article className="relative rounded-4xl bg-card p-6 overflow-hidden">
-                <span className="absolute bottom-0 right-2 text-6xl font-bold text-tone-yellow select-none opacity-10">
-                  #{data.step}
-                </span>
+              <FadeInUp delayOffset={index * 0.1}>
+                <article className="relative rounded-4xl bg-card p-6 overflow-hidden">
+                  <span className="absolute bottom-0 right-2 text-6xl font-bold text-tone-yellow select-none opacity-10">
+                    #{data.step}
+                  </span>
 
 
-                <header className="mt-1">
-                  <div className="flex items-center gap-2">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                      <Icon className="size-5" />
+                  <header className="mt-1">
+                    <div className="flex items-center gap-2">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                        <Icon className="size-5" />
+                      </div>
+                      <h3 className="h4">{data.title}</h3>
                     </div>
-                    <h3 className="h4">{data.title}</h3>
-                  </div>
 
-                  <p className="mt-2 text-sm 2xl:text-base text-muted-foreground">
-                    {data.description}
-                  </p>
+                    <p className="mt-2 text-sm 2xl:text-base text-muted-foreground">
+                      {data.description}
+                    </p>
 
-                  <ul className="mt-2 list-none">
-                    {data.features.map(item => (
-                      <li className="flex items-start gap-2" key={item + "Steps"}>
-                        <ArrowRight className="mt-1 size-4 text-tone-yellow shrink-0" strokeWidth={3} aria-hidden="true" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </header>
-              </article>
+                    <ul className="mt-2 list-none">
+                      {data.features.map((item, i) => (
+                        <li className="flex items-start gap-2" key={item + i + "Steps"}>
+                          <ArrowRight className="mt-1 size-4 text-tone-yellow shrink-0" strokeWidth={3} aria-hidden="true" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </header>
+                </article>
+              </FadeInUp>
             </li>
           )
         })}

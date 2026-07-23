@@ -1,3 +1,4 @@
+import { ISODateString } from "@/types";
 import React from "react";
 
 export function formatPhoneHref(href: string) {
@@ -34,7 +35,7 @@ export function renderGradientWords(text: string) {
     ));
 }
 
-export function formatDate(dateString: string) {
+export function formatDate(dateString: ISODateString) {
     const date = new Date(dateString);
 
     const day = date.getDate();

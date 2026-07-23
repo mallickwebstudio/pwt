@@ -75,7 +75,7 @@ const whyChooseUs = [
 export default function WhyPwt() {
   return (
     // <section id="why-pwt" className="relative bg-linear-to-b from-cyan-50 to-transparent">
-    <section id="why-pwt" className="relative bg-cyan-50">
+    <section id="why-pwt" className="relative bg-linear-to-bl from-cyan-50 to-background">
       <div className="container mx-auto grid gap-10 px-6 py-12 md:px-16 lg:grid-cols-5 lg:items-center">
         {/* Content */}
         <header className="lg:col-span-3">
