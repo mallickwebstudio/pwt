@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useId, useMemo, useState, type ReactNode } from "react"; import { LoaderIcon, Astroid } from "lucide-react";
+import { useEffect, useId, useMemo, useState, type ReactNode } from "react";
+import { LoaderIcon, Astroid } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { packagesData } from "@/lib/db/packages";
+import { packagesData } from "@/db/packages";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -25,13 +26,12 @@ import { handleFormSubmit } from "@/lib/contact";
 import { Marquee } from "./marquee";
 
 const LEAD_DIALOG_VISITED_KEY = "lead-dialog-opened";
+
 /**
- * ------------------------------------------------------------
- * Google Form config — centralized here so every page that
- * renders <LeadDialog /> stays in sync without duplicating logic.
- * Replace the TODO entry IDs with the real ones from your form.
- * ------------------------------------------------------------
+ * Global flag to prevent multiple instances of this component 
+ * on the same page from starting duplicate timers.
  */
+let autoTimerStarted = false;
 
 const TRAVELLER_OPTIONS = ["2 Adults", "Family", "Group", "Solo"];
 
@@ -59,11 +59,8 @@ const emptyForm = {
 };
 
 interface LeadDialogProps {
-    /** Custom trigger element, e.g. a differently styled Button. Defaults to a standard Button. */
     trigger?: ReactNode;
-    /** Label used only for the default trigger button (ignored if `trigger` is passed). */
     triggerLabel?: string;
-    /** Pre-select a package, e.g. pass `pkg.slug` from a package details page. */
     ctaLabel?: string;
     triggerClassName?: string;
     defaultPackageSlug?: string;
@@ -122,24 +119,39 @@ export default function LeadDialog({
     }
 
     useEffect(() => {
-        // Already opened before
-        if (localStorage.getItem(LEAD_DIALOG_VISITED_KEY)) return;
+        // Use sessionStorage instead of localStorage (resets on browser close)
+        if (sessionStorage.getItem(LEAD_DIALOG_VISITED_KEY)) return;
+
+        // Prevent multiple components from triggering overlapping timeouts
+        if (autoTimerStarted) return;
+        autoTimerStarted = true;
 
         const timer = setTimeout(() => {
-            localStorage.setItem(LEAD_DIALOG_VISITED_KEY, "true");
-            setOpen(true);
+            // Check again in case the user manually opened a dialog during the 15s wait
+            if (!sessionStorage.getItem(LEAD_DIALOG_VISITED_KEY)) {
+                sessionStorage.setItem(LEAD_DIALOG_VISITED_KEY, "true");
+                setOpen(true);
+            }
         }, 15000);
 
-        return () => clearTimeout(timer);
+        return () => {
+            clearTimeout(timer);
+            autoTimerStarted = false; // Reset lock if the component unmounts
+        };
     }, []);
 
     return (
         <Dialog
             open={open}
             onOpenChange={(next) => {
-                if (next) { localStorage.setItem(LEAD_DIALOG_VISITED_KEY, "true") }
+                if (next) {
+                    // Mark as visited in session so the timer doesn't fire later
+                    sessionStorage.setItem(LEAD_DIALOG_VISITED_KEY, "true");
+                }
                 setOpen(next);
-                if (!next) { resetForm() }
+                if (!next) {
+                    resetForm();
+                }
             }}
         >
             <DialogTrigger className={triggerClassName}>
@@ -271,7 +283,6 @@ export default function LeadDialog({
                             </Select>
                         </div>
                     </div>
-
 
                     <div>
                         <label className="block text-sm font-medium" htmlFor={`${uid}-message`}>

@@ -38,8 +38,8 @@ import {
 } from "nuqs";
 
 // Adjust these two import paths to match where your static data actually lives
-import { packagesData } from "@/lib/db/packages";
-import { pricingData } from "@/lib/db/pricing";
+import { packagesData } from "@/db/packages";
+import { pricingData } from "@/db/pricing";
 
 import {
     filterPackages,
@@ -435,7 +435,7 @@ function FilterPanel({
                     <AccordionItem value="price">
                         <AccordionTrigger className="cursor-pointer">Starting Price</AccordionTrigger>
                         <AccordionContent>
-                            <div className="px-1">
+                            <div className="my-1 px-1">
                                 <Slider
                                     min={priceBounds.min}
                                     max={priceBounds.max}

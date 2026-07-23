@@ -1,9 +1,9 @@
 import { BasePackage } from "@/types"
-import { mediaData } from "./db/media"
-import { packagesData } from "./db/packages"
-import { servicesData } from "./db/services"
-import { itinerariesData } from "./db/itineraries"
-import { pricingData } from "./db/pricing"
+import { mediaData } from "../db/media"
+import { packagesData } from "../db/packages"
+import { servicesData } from "../db/services"
+import { itinerariesData } from "../db/itineraries"
+import { pricingData } from "../db/pricing"
 
 export const siteConfig = {
     name: "Patel World Tour",

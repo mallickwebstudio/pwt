@@ -77,7 +77,7 @@ export default function BookingSteps() {
               key={data.step}
               className={cn(index === 1 && "lg:mt-20", index === 2 && "lg:mt-40")}
             >
-              <FadeInUp delayOffset={index * 0.1}>
+              <FadeInUp delayOffset={index * 0.2}>
                 <article className="relative rounded-4xl bg-card p-6 overflow-hidden">
                   <span className="absolute bottom-0 right-2 text-6xl font-bold text-tone-yellow select-none opacity-10">
                     #{data.step}

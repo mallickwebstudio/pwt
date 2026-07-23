@@ -1,0 +1,223 @@
+{
+  "character_anchors": {
+    "raju": "Anime boy named Raju, messy short black hair, round black glasses, yellow collared polo shirt, navy blue shorts, white striped socks, dark blue sneakers.",
+    "billu": "Blue robot cat named Billu, capsule-shaped head, white face, small red nose, red collar with yellow bell, blue front pocket with gold button.",
+    "environment": "Japanese tatami room, daytime lighting, pale green walls, blue wooden study desk, consistent setting."
+  },
+  "shots": [
+    {
+      "shot": 1,
+      "image": {
+        "reference-images": ["01-raju.png", "11-whole-room.jpg"],
+        "image-prompt": "Medium shot. Raju (messy black hair, round glasses, yellow polo shirt, navy blue shorts, white socks, blue sneakers) sitting on tatami floor inside the room from 11-whole-room.jpg. Crying hysterically with anime stream tears, holding black smartphone showing beach photo. Daytime lighting."
+      },
+      "video": {
+        "video-prompt": "Subtle camera drift. Very slight shoulder heaving from crying. Tears subtly streaming. Keep Raju's facial structure, glasses, and yellow polo shirt perfectly static and consistent. No large movements."
+      },
+      "dialogue": [
+        {
+          "character": "Raju",
+          "text": "Biiiii-lluuu... ye Monty firse Singapore chala gaya... aur apni photo bhej kar, flex kar raha hai! Mujhe bhi Singapore jaana hai, Biiiii-lluuu!",
+          "voicePrompt": "Whiny, high-pitched, crying hysterically, hyper-dramatic, stretching out vowels with continuous weeping noises."
+        }
+      ]
+    },
+    {
+      "shot": 2,
+      "image": {
+        "reference-images": ["02-billu.png", "14-wall-close-up.jpg"],
+        "image-prompt": "Medium shot. Billu (blue robot cat, white face, red nose, red collar with yellow bell, blue pocket) standing against the pale green wall from 14-wall-close-up.jpg. Daytime lighting. Calm expression, mouth slightly open to talk."
+      },
+      "video": {
+        "video-prompt": "Static camera. Subtle head tilt and minor mouth movement for speaking. Keep Billu's robotic body, collar, and pocket perfectly intact and rigid. Do not morph the body."
+      },
+      "dialogue": [
+        {
+          "character": "Billu",
+          "text": "Koi baat nahi Raju... hum Anywhere Door ka use karke jaa sakte hai.",
+          "voicePrompt": "Calm, grounded, slightly raspy male cartoon voice, relaxed tempo, reassuring and matter-of-fact tone."
+        }
+      ]
+    },
+    {
+      "shot": 3,
+      "image": {
+        "reference-images": ["01-raju.png", "14-wall-close-up.jpg"],
+        "image-prompt": "Close-up shot. Raju (messy black hair, round glasses, yellow polo shirt) shouting furiously, aggressively pointing index finger forward against green wall background 14-wall-close-up.jpg. Daytime lighting."
+      },
+      "video": {
+        "video-prompt": "Subtle slow zoom in. Raju's mouth moves angrily, slight trembling in the pointed arm. Keep the glasses, yellow shirt, and facial features perfectly consistent. No morphing."
+      },
+      "dialogue": [
+        {
+          "character": "Raju",
+          "text": "Tum mujhe fukat-khor samajh rahe ho?! Mujhe... VIP ki tarah, luxury flight aur cruise mein jana hai!",
+          "voicePrompt": "Angry, indignant, sharp high pitch, fast defensive pace, screaming with an offended attitude."
+        }
+      ]
+    },
+    {
+      "shot": 4,
+      "image": {
+        "reference-images": ["02-billu.png", "11-whole-room.jpg"],
+        "image-prompt": "Medium shot. Billu (blue robot cat, red collar, yellow bell) reaching round white hand slightly into his blue stomach pocket. Confident expression, standing in room 11-whole-room.jpg. Daytime lighting."
+      },
+      "video": {
+        "video-prompt": "Static camera. Subtle movement of the white hand pushing gently into the blue pocket. Slight eye blink. Keep Billu's anatomy and collar entirely consistent. Minimal motion."
+      },
+      "dialogue": [
+        {
+          "character": "Billu",
+          "text": "Theek hai... mai kuch karta hu.",
+          "voicePrompt": "Low, thoughtful tone, slight pause, confident and slightly scheming voice."
+        }
+      ]
+    },
+    {
+      "shot": 5,
+      "image": {
+        "reference-images": ["02-billu.png"],
+        "image-prompt": "Extreme close-up. Billu (blue robot cat, white face, red nose) holding up a thin silver smartphone. The phone emits a glowing yellow magical aura onto his face. Dramatic gadget reveal."
+      },
+      "video": {
+        "video-prompt": "Subtle pulsing glow from the phone reflecting on Billu's face. Slight mouth opening. Do not change the shape of the phone or Billu's face. Keep motion restricted to the light effect."
+      },
+      "dialogue": [
+        {
+          "character": "Billu",
+          "text": "Ultimate... Travel... Plannerrr!",
+          "voicePrompt": "Heroic, loud, booming gadget announcement voice, stretched-out final word."
+        },
+        {
+          "character": "Raju",
+          "text": "Are wah Billu! Kya ye hume Singapore le jayega?!",
+          "voicePrompt": "Sudden gasp of joy, high-pitched excited awe, rapid hopeful pacing."
+        }
+      ]
+    },
+    {
+      "shot": 6,
+      "image": {
+        "reference-images": ["02-billu.png", "14-wall-close-up.jpg"],
+        "image-prompt": "Close-up. Billu (blue robot cat, red nose, bell collar) holding smartphone. Flat deadpan expression, half-lidded eyes, completely unamused face, against green wall 14-wall-close-up.jpg."
+      },
+      "video": {
+        "video-prompt": "Completely static camera. The character is frozen in a deadpan stare. Only add a very subtle single eye blink. Do not move the head or phone to maintain comedic timing."
+      },
+      "dialogue": [
+        {
+          "character": "Billu",
+          "text": "Nahi... ye to sirf ek smart phone hai.",
+          "voicePrompt": "Completely flat, deadpan, monotonous delivery, blunt dry humor, zero emotion."
+        }
+      ]
+    },
+    {
+      "shot": 7,
+      "image": {
+        "reference-images": ["01-raju.png", "12-high-angle.jpg"],
+        "image-prompt": "High-angle shot looking down at tatami floor from 12-high-angle.jpg. Raju (yellow polo shirt, navy shorts, white socks, blue sneakers) face-planted flat on floor in comedic anime collapse pose. Daytime."
+      },
+      "video": {
+        "video-prompt": "Static high-angle camera. Raju is entirely motionless on the floor. Only add a subtle dust particle floating effect in the air. Do not morph the character's clothing or position."
+      },
+      "dialogue": [
+        {
+          "character": "Raju",
+          "text": "Meri tannng mat khecho Billu!!",
+          "voicePrompt": "Screaming in rage, exaggerated cracked voice, high-pitched outburst of frustration."
+        }
+      ]
+    },
+    {
+      "shot": 8,
+      "image": {
+        "reference-images": ["02-billu.png", "15-Desk-Profile.jpg"],
+        "image-prompt": "Over-the-shoulder shot beside blue desk from 15-Desk-Profile.jpg. Looking past Billu's blue head at a smartphone screen displaying a luxury cruise ship and tropical island tour package. Daytime lighting."
+      },
+      "video": {
+        "video-prompt": "Subtle digital screen flicker on the smartphone. Very slight thumb movement on the edge of the phone. The background and Billu's head must remain rigidly still."
+      },
+      "dialogue": [
+        {
+          "character": "Billu",
+          "text": "Ruk jao Raju, sabar to karo. Are haa, mil gaya! Patel World Tour ka, Singapore wala package check karo. Aur Singapore hi nahi... uske saath Malaysia bhi ghum sakte hai.",
+          "voicePrompt": "Fast-talking, informative, cheerful, clear emphasis on package names and locations."
+        }
+      ]
+    },
+    {
+      "shot": 9,
+      "image": {
+        "reference-images": ["01-raju.png", "14-wall-close-up.jpg"],
+        "image-prompt": "Extreme close-up on Raju's face (round glasses, messy black hair, yellow polo collar). Gigantic sparkling eyes with star highlights and massive overjoyed open-mouth smile. Green wall background."
+      },
+      "video": {
+        "video-prompt": "Subtle upward camera pan. Starry highlights in the eyes sparkle slightly. Keep the facial structure, glasses frame, and yellow collar perfectly consistent. No morphing."
+      },
+      "dialogue": [
+        {
+          "character": "Raju",
+          "text": "Kya sachme?! Phir to hum Monty ko, Singapore ke saath saath... Malaysia ki bhi photo dikha sakte hai naa! Yaaayyy!",
+          "voicePrompt": "Super high energy, ecstatic, squeaky excitement, mischievous joy at the end."
+        }
+      ]
+    },
+    {
+      "shot": 10,
+      "image": {
+        "reference-images": ["02-billu.png"],
+        "image-prompt": "Split-screen composition: Left side renders luxury white cruise ship on blue water; Right side shows Billu (blue robot cat, red nose, red collar, yellow bell) pointing index finger up, explaining. Green wall behind Billu."
+      },
+      "video": {
+        "video-prompt": "On the left side, very subtle water ripples. On the right side, Billu's finger nods slightly to the rhythm of speaking. Lock the split-screen composition entirely. Do not let the sides bleed together."
+      },
+      "dialogue": [
+        {
+          "character": "Billu",
+          "text": "Haa Raju. Aur to aur... Visa, flights, hotels, sab unki zimmedari hai. Sirf yahi nahi Raju! Hamare saath ek tour guide bhi hoga... jo hume saare destinations ghumayega.",
+          "voicePrompt": "Confident presenter voice, crisp articulate delivery, persuasive sales pitch cadence."
+        }
+      ]
+    },
+    {
+      "shot": 11,
+      "image": {
+        "reference-images": ["01-raju.png", "02-billu.png", "11-whole-room.jpg"],
+        "image-prompt": "Medium wide shot in room 11-whole-room.jpg. Raju (yellow polo, navy shorts) and Billu (blue robot cat, red collar, blue pocket) standing side-by-side on tatami floor near blue desk, smiling happily. Daytime."
+      },
+      "video": {
+        "video-prompt": "Very slow, subtle cinematic camera pan to the right. Characters exhibit slight breathing motion. Keep outfits, heights, and room geometry completely locked and unchanged."
+      },
+      "dialogue": [
+        {
+          "character": "Raju",
+          "text": "Fir to boht maza aayega... Hum saare destinations acche se dekh sakte hai.",
+          "voicePrompt": "Warm, relieved, happy anticipation, relaxed cadence."
+        },
+        {
+          "character": "Billu",
+          "text": "Jaldi booking kar lete hai Raju... agli trip 14th August ko hai.",
+          "voicePrompt": "Urgent, upbeat call-to-action tone, friendly recommendation."
+        }
+      ]
+    },
+    {
+      "shot": 12,
+      "image": {
+        "reference-images": ["01-raju.png", "02-billu.png", "13-Low Angle.jpg"],
+        "image-prompt": "Low-angle shot matching 13-Low Angle.jpg perspective. Raju (yellow polo, navy shorts, blue sneakers) jumping high in victory pose. Billu (blue robot cat, red collar) cheers beside him on tatami floor. Daytime."
+      },
+      "video": {
+        "video-prompt": "Simulate an anime 'freeze frame' action shot. Raju remains suspended in mid-air with only subtle clothing flutter. Billu's arm subtly shakes in excitement. Do not let Raju fall or the body morph."
+      },
+      "dialogue": [
+        {
+          "character": "Raju",
+          "text": "Haa haa! Jaldi unse contact karo Billu! Yaaayyy! Mai bhi Singapore jaunga... fir Monty ko dikhaunga!",
+          "voicePrompt": "Unfiltered screaming excitement, laughing, triumphant, wildly enthusiastic fast delivery."
+        }
+      ]
+    }
+  ]
+}

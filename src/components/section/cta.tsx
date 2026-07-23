@@ -1,7 +1,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import CtaButton from "../other/cta-button";
-import { ctas } from "@/lib/db";
+import { ctas } from "@/db";
 import { ZoomInUp } from "../animation/zoom-in-up";
 
 interface CtaProps {

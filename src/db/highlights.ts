@@ -158,16 +158,16 @@ export const highlightsData: Record<TourSlug, HighlightsData> = {
         imageSrc: "/images/activities/smtc/01.webp", label: "Resort World Cruise Voyage",
       },
       {
-        imageSrc: "/images/activities/smtc/01.webp", label: "Universal Studios Singapore Outing",
+        imageSrc: "/images/activities/smtc/02.webp", label: "Universal Studios Singapore Outing",
       },
       {
-        imageSrc: "/images/activities/smtc/01.webp", label: "Sunway Lagoon 6-Park Adventure",
+        imageSrc: "/images/activities/smtc/03.webp", label: "Sunway Lagoon 6-Park Adventure",
       },
       {
-        imageSrc: "/images/activities/smtc/01.webp", label: "Coral Island Speedboat Tour",
+        imageSrc: "/images/activities/smtc/04.webp", label: "Coral Island Speedboat Tour",
       },
       {
-        imageSrc: "/images/activities/smtc/01.webp", label: "Safari World & Marine Park Excursion",
+        imageSrc: "/images/activities/smtc/05.webp", label: "Safari World & Marine Park Excursion",
       }
     ]
   },
@@ -184,16 +184,16 @@ export const highlightsData: Record<TourSlug, HighlightsData> = {
         imageSrc: "/images/activities/vietnam/01.webp", label: "Overnight Halong Bay Luxury Cruise",
       },
       {
-        imageSrc: "/images/activities/vietnam/01.webp", label: "Ba Na Hills & Golden Bridge",
+        imageSrc: "/images/activities/vietnam/02.webp", label: "Ba Na Hills & Golden Bridge",
       },
       {
-        imageSrc: "/images/activities/vietnam/01.webp", label: "Vinpearl Safari & VinWonders Exploration",
+        imageSrc: "/images/activities/vietnam/03.webp", label: "Vinpearl Safari & VinWonders Exploration",
       },
       {
-        imageSrc: "/images/activities/vietnam/01.webp", label: "Hanoi Train Street Experience",
+        imageSrc: "/images/activities/vietnam/04.webp", label: "Hanoi Train Street Experience",
       },
       {
-        imageSrc: "/images/activities/vietnam/01.webp", label: "Hoi An Coconut Forest Basket Boat Ride",
+        imageSrc: "/images/activities/vietnam/05.webp", label: "Hoi An Coconut Forest Basket Boat Ride",
       }
     ]
   },

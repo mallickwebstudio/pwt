@@ -1,6 +1,6 @@
 import Section from "@/components/section/section";
-import { upcomingToursData } from "@/lib/db/upcoming";
-import { packagesData } from "@/lib/db/packages";
+import { upcomingToursData } from "@/db/upcoming";
+import { packagesData } from "@/db/packages";
 import PackageCard from "@/components/card/package-card";
 import { Badge } from "@/components/ui/badge";
 import { formatDate } from "@/lib/format";
@@ -18,7 +18,7 @@ export default function Upcoming() {
         {tours.map((data, i) => {
           return (
             <div className="relative" key={i + "HomeHorizontalCard"}>
-              <FadeInUp delayOffset={i * 0.1}>
+              <FadeInUp delayOffset={i * 0.2}>
                 {/* <PackageCardHorizontal data={packagesData.filter(item => item.slug === data.package.slug)[0]} key={i + "HomeHorizontalCard"} /> */}
                 <PackageCard data={packagesData.filter(item => item.slug === data.package.slug)[0]} key={i + "HomeHorizontalCard"} />
                 <div className="absolute top-2 w-full flex flex-col items-center justify-center">

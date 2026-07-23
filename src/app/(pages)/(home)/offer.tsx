@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { offersData } from "@/lib/db/offers";
+import { offersData } from "@/db/offers";
 import { ArrowRight } from "lucide-react";
-import { mediaData } from "@/lib/db/media";
-import { pricingData } from "@/lib/db/pricing";
+import { mediaData } from "@/db/media";
+import { pricingData } from "@/db/pricing";
 
 export default function Offer() {
   const offer = offersData[0]

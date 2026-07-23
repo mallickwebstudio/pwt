@@ -11,15 +11,15 @@ import {
     TourSlug,
     PackagePricing,
 } from "@/types"; // Adjust path to your file
-import { packagesData } from "./db/packages";
-import { highlightsData } from "./db/highlights";
-import { hotelsData } from "./db/hotels";
-import { inclusionsExclusionsData } from "./db/inclusionsExclusions";
-import { itinerariesData } from "./db/itineraries";
-import { mediaData } from "./db/media";
-import { seoData } from "./db/seo";
-import { tourDatesData } from "./db/tour-dates";
-import { pricingData } from "./db/pricing";
+import { packagesData } from "../db/packages";
+import { highlightsData } from "../db/highlights";
+import { hotelsData } from "../db/hotels";
+import { inclusionsExclusionsData } from "../db/inclusionsExclusions";
+import { itinerariesData } from "../db/itineraries";
+import { mediaData } from "../db/media";
+import { seoData } from "../db/seo";
+import { tourDatesData } from "../db/tour-dates";
+import { pricingData } from "../db/pricing";
 
 export interface EnrichedTourPackage extends BasePackage {
     pricing?: PackagePricing;

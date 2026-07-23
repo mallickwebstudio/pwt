@@ -1,5 +1,5 @@
 import Section from "@/components/section/section";
-import { packagesData } from "@/lib/db/packages";
+import { packagesData } from "@/db/packages";
 import CategoryCard from "@/components/card/category-card";
 import { PackageCategory } from "@/types";
 

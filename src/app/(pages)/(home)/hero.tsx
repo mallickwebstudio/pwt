@@ -1,9 +1,10 @@
+"use client"
+
 import { buttonVariants } from "@/components/ui/button";
 import { SearchCommand } from "@/components/other/search-command";
 import { HeroBackground } from "@/components/other/hero-background";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-
 
 export default function Hero() {
     return (

@@ -144,7 +144,7 @@ export default function RootLayout({
         </NuqsAdapter>
         <Contact />
         <Footer />
-        <Toaster />
+        <Toaster position="top-center" />
         <GoogleAnalytics gaId="G-5QRY78BGTR" />
       </body>
     </html>

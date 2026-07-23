@@ -325,10 +325,5 @@ export const mediaData: Record<TourSlug, MediaItem[]> = {
       altText: "Tsomgo Lake Sikkim",
       isHero: false
     },
-    {
-      url: "/images/packages/sikkim-lake.webp",
-      altText: "Tsomgo Lake Sikkim",
-      isHero: false
-    }
   ]
 };

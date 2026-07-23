@@ -5,8 +5,8 @@ import { buttonVariants } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BasePackage } from "@/types";
-import { pricingData } from "@/lib/db/pricing";
-import { mediaData } from "@/lib/db/media";
+import { pricingData } from "@/db/pricing";
+import { mediaData } from "@/db/media";
 
 export default function PackageCardHorizontal({ data }: { data: BasePackage }) {
     // Pass dynamic image or fall back to default

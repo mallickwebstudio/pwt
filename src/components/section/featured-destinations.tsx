@@ -1,9 +1,9 @@
-import { packagesData } from "@/lib/db/packages";
+import { packagesData } from "@/db/packages";
 import Section from "@/components/section/section";
 import DestinationCard from "@/components/card/destination-card";
 import { Destination as TypeDestination } from "@/types";
-import { pricingData } from "@/lib/db/pricing";
-import { mediaData } from "@/lib/db/media";
+import { pricingData } from "@/db/pricing";
+import { mediaData } from "@/db/media";
 import { ZoomInUp } from "../animation/zoom-in-up";
 
 const destinations = Object.values(
@@ -51,7 +51,7 @@ export default function FeaturedDestinations() {
       <ul className="mt-10 grid gap-2 md:gap-6 grid-cols-2 md:grid-cols-4 list-none">
         {destinations.map((data, i) => (
           <li key={data.name + i + "HomeDestination"}>
-            <ZoomInUp delayOffset={i * 0.1}>
+            <ZoomInUp delayOffset={i * 0.2}>
               <DestinationCard data={data} />
             </ZoomInUp>
           </li>

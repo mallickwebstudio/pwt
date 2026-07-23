@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-import { packagesData } from "@/lib/db/packages";
+import { packagesData } from "@/db/packages";
 import Section from "@/components/section/section";
 import PackageCard from "@/components/card/package-card";
 import {
@@ -40,7 +39,6 @@ export default function FeaturedPackages() {
 
   return (
     <Section
-      wrapperClassName="pt-0"
       h2="Our Featured Packages"
       p="Discover handpicked domestic and international tours designed for families, couples, groups, and adventure seekers."
       ctaHref="/packages"

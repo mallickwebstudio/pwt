@@ -1,15 +1,16 @@
-import { BasePackage, PackageRouteMeta, MediaItem, PackagePricing } from "@/types";
+import { BasePackage, PackageRouteMeta, MediaItem, PackagePricing, TourSlug, ISODateString } from "@/types";
 import { packagesData } from "./packages";
 import { tourDatesData } from "./tour-dates";
 import { mediaData } from "./media";
 import { pricingData } from "./pricing";
 
 export interface UpcomingTourPackage {
+  slug: TourSlug;
   package: BasePackage;
   routeMeta: PackageRouteMeta;
   heroMedia?: MediaItem;
   pricing?: PackagePricing;
-  nextDepartureDate: string;
+  nextDepartureDate: ISODateString;
 }
 
 // Format today's date as YYYY-MM-DD for fast string comparison
@@ -31,6 +32,7 @@ export const upcomingToursData: UpcomingTourPackage[] = packagesData
     const pricing = pricingData?.[pkg.slug];
 
     return {
+      slug: pkg.slug,
       package: pkg,
       routeMeta: {
         ...routeMeta,

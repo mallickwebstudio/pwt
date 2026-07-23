@@ -74,7 +74,7 @@ export default function Navbar() {
                 <NavbarCtaAction className="hidden lg:flex items-center gap-2 justify-self-end" />
 
                 {/* Mobile Menu Toggle */}
-                <div className="flex lg:hidden items-center gap-2">
+                <div className="flex lg:hidden items-center gap-2 justify-self-end">
                     <CtaButton />
                     <Button
                         variant="outline"

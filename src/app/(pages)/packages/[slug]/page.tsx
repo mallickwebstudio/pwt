@@ -1,13 +1,13 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
-import { packagesData } from "@/lib/db/packages";
-import { mediaData } from "@/lib/db/media";
-import { pricingData } from "@/lib/db/pricing";
-import { highlightsData } from "@/lib/db/highlights";
-import { hotelsData } from "@/lib/db/hotels";
-import { itinerariesData } from "@/lib/db/itineraries";
-import { seoData } from "@/lib/db/seo"; // adjust path if your SEO export lives elsewhere
+import { packagesData } from "@/db/packages";
+import { mediaData } from "@/db/media";
+import { pricingData } from "@/db/pricing";
+import { highlightsData } from "@/db/highlights";
+import { hotelsData } from "@/db/hotels";
+import { itinerariesData } from "@/db/itineraries";
+import { seoData } from "@/db/seo"; // adjust path if your SEO export lives elsewhere
 import { TOUR_SLUGS, TourSlug } from "@/types";
 import PackageHero from "./package-hero";
 import {
@@ -18,7 +18,7 @@ import {
   PackageInclusionsExclusions,
   PackageHighlights,
 } from "./package-section";
-import { inclusionsExclusionsData } from "@/lib/db/inclusionsExclusions";
+import { inclusionsExclusionsData } from "@/db/inclusionsExclusions";
 import Faq from "@/components/section/faq";
 import Cta from "@/components/section/cta";
 import WhyPwt from "@/components/section/why-pwt";

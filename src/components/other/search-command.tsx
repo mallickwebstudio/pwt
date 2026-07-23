@@ -6,7 +6,7 @@ import { Search, MapPin, Compass, Briefcase } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Assuming your data and types are exported from a central lib
-import { packagesData } from "@/lib/db/packages";
+import { packagesData } from "@/db/packages";
 import {
     Command,
     CommandDialog,

@@ -1,5 +1,5 @@
 import Section from "@/components/section/section";
-import { servicesData } from "@/lib/db/services";
+import { servicesData } from "@/db/services";
 import Image from "next/image";
 // import { Section } from "@/components/common/section";
 // import { services } from "@/data/services";

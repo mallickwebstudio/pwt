@@ -30,7 +30,7 @@ import {
  */
 export function PackageHighlights({ data }: { data: HighlightsData }) {
   return (
-    <Section className="overflow-scroll">
+    <Section>
       <header className={cn("relative grid grid-cols-1 lg:grid-cols-2 gap-8")}>
         <div className="lg:sticky lg:top-20 h-fit">
           <div className={cn("max-w-2xl")}>

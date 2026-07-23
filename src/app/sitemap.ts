@@ -1,6 +1,6 @@
 // app/sitemap.ts
 
-import { packagesData } from "@/lib/db/packages";
+import { packagesData } from "@/db/packages";
 import { siteConfig } from "@/lib/metadata";
 import type { MetadataRoute } from "next";
 
